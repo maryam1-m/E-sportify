@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:controller="org.example.controller.HomeController"
+      prefHeight="400.0"
+      prefWidth="640.0"
+      xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1">
+
+    <children>
+
+        <TitledPane animated="false" text="E-Sportify">
+            <content>
+                <AnchorPane minHeight="0.0"
+                            minWidth="0.0"
+                            prefHeight="180.0"
+                            prefWidth="200.0" />
+            </content>
+        </TitledPane>
+
+        <AnchorPane maxHeight="-1.0"
+                    maxWidth="-1.0"
+                    prefHeight="-1.0"
+                    prefWidth="-1.0"
+                    style="-fx-background-color: #9fd3cd;"
+                    VBox.vgrow="ALWAYS">
+
+            <children>
+
+                <ImageView fitHeight="384.0"
+                           fitWidth="281.0"
+                           pickOnBounds="true"
+                           preserveRatio="true">
+
+                    <image>
+                        <Image url="@images/gaming.jpeg"/>
+                    </image>
+
+                </ImageView>
+
+                <!-- Sign Up Button -->
+                <Button layoutX="366.0"
+                        layoutY="257.0"
+                        mnemonicParsing="false"
+                        onAction="#goToSignup"
+                        prefHeight="38.0"
+                        prefWidth="190.0"
+                        style="-fx-background-color: #072e33; -fx-text-fill: white; -fx-background-radius: 20;"
+                        text="SignUp">
+
+                    <font>
+                        <Font name="ArtifaktElement-Heavy" size="16.0" />
+                    </font>
+
+                </Button>
+
+                <!-- Title -->
+                <Label layoutX="337.0"
+                       layoutY="39.0"
+                       prefHeight="71.0"
+                       prefWidth="261.0"
+                       style="-fx-text-fill: #1d677f;"
+                       text="E-Sportify"
+                       textAlignment="CENTER">
+
+                    <font>
+                        <Font name="ArtifaktElement-Medium" size="50.0" />
+                    </font>
+
+                </Label>
+
+                <!-- Login Button -->
+                <Button layoutX="366.0"
+                        layoutY="187.0"
+                        mnemonicParsing="false"
+                        onAction="#goToLogin"
+                        prefHeight="38.0"
+                        prefWidth="190.0"
+                        style="-fx-background-color: #0c7075; -fx-text-fill: #ffffff; -fx-background-radius: 20;"
+                        text="LogIn">
+
+                    <font>
+                        <Font name="ArtifaktElement-Heavy" size="16.0" />
+                    </font>
+
+                </Button>
+
+                <Label layoutX="306.0"
+                       layoutY="131.0"
+                       style="-fx-text-fill: white;">
+
+                    <font>
+                        <Font name="Dutch 801 Bold BT" size="18.0" />
+                    </font>
+
+                </Label>
+
+                <Label layoutX="333.0"
+                       layoutY="120.0"
+                       prefHeight="22.0"
+                       prefWidth="269.0"
+                       style="-fx-text-fill: #199396;"
+                       text="Competitive Gaming Management System">
+
+                    <font>
+                        <Font name="Calibri Light Italic" size="14.0" />
+                    </font>
+
+                </Label>
+
+                <Line endX="221.0"
+                      endY="-7.62939453125E-6"
+                      layoutX="401.0"
+                      layoutY="111.0"
+                      opacity="0.35"
+                      startX="-100.0"
+                      stroke="#13705d"
+                      strokeLineCap="ROUND" />
+
+                <Line endX="221.0"
+                      endY="144.00003051757812"
+                      layoutX="59.0"
+                      layoutY="230.0"
+                      startX="221.97705078125"
+                      startY="-230.0"
+                      stroke="#13705d"
+                      strokeLineCap="BUTT" />
+
+            </children>
+
+        </AnchorPane>
+
+    </children>
+
+</VBox>

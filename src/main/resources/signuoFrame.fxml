@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="E-Sportify" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="386.0" fitWidth="678.0" layoutX="-49.0" layoutY="-10.0" pickOnBounds="true">
+               <image>
+                   <Image url="@images/signup.jpeg"/>
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#e1e8ec" height="311.0" layoutX="340.0" layoutY="29.0" opacity="0.65" stroke="#97c9c6" strokeType="INSIDE" width="247.0" />
+            <Label layoutX="360.0" layoutY="37.0" prefHeight="30.0" prefWidth="216.0" style="-fx-text-fill: #1d677f;" text="Creat Your Account" textAlignment="CENTER" textFill="#75e2e0">
+               <font>
+                  <Font name="Century Schoolbook Bold" size="20.0" />
+               </font>
+            </Label>
+            <Line endX="108.959716796875" endY="-7.62939453125E-6" layoutX="458.0" layoutY="67.0" opacity="0.18" startX="-102.383056640625" stroke="#1d677f" />
+            <PasswordField layoutX="401.0" layoutY="191.0" prefHeight="26.0" prefWidth="163.0" promptText="password" />
+            <PasswordField layoutX="400.0" layoutY="232.0" prefHeight="26.0" prefWidth="165.0" promptText="Confirm Password" />
+            <TextField layoutX="401.0" layoutY="98.0" prefHeight="26.0" prefWidth="163.0" promptText="Full Name" />
+            <TextField layoutX="401.0" layoutY="145.0" prefHeight="26.0" prefWidth="163.0" promptText="Email" />
+            <Button layoutX="474.0" layoutY="276.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="98.0" style="-fx-background-radius: 20; -fx-background-color: #0c7075;" text="    Sign Up" textFill="WHITE">
+               <font>
+                  <Font name="Artifakt Element Heavy Italic" size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="400.0" layoutY="85.0" prefHeight="15.0" prefWidth="35.0" text="Name" textFill="#04394d">
+               <font>
+                  <Font name="Arial" size="8.0" />
+               </font>
+            </Label>
+            <Label layoutX="400.0" layoutY="133.0" prefHeight="15.0" prefWidth="35.0" text="Email" textFill="#04394d">
+               <font>
+                  <Font name="Arial" size="8.0" />
+               </font>
+            </Label>
+            <Label layoutX="402.0" layoutY="177.0" prefHeight="15.0" prefWidth="72.0" text="password" textFill="#04394d">
+               <font>
+                  <Font name="Arial" size="8.0" />
+               </font>
+            </Label>
+            <Label layoutX="400.0" layoutY="220.0" prefHeight="15.0" prefWidth="96.0" text="Confirm Password" textFill="#04394d">
+               <font>
+                  <Font name="Arial" size="8.0" />
+               </font>
+            </Label>
+            <Button layoutX="349.0" layoutY="276.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #0c7075;" text="Back" textFill="WHITE">
+               <font>
+                  <Font name="ArtifaktElement-Heavy" size="14.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="24.0" fitWidth="18.0" layoutX="482.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                   <Image url="@images/user.png"/>
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="18.0" layoutX="358.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/back.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="19.0" fitWidth="19.0" layoutX="372.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/user.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="370.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/read.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="374.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/locked-computer.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="374.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/locked-computer.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+  </content>
+</TitledPane>
