@@ -10,8 +10,7 @@ public class GamesController extends DashboardController {
     private TextField searchGameField;
 
     public void searchGame(ActionEvent event) {
-        String gameName = searchGameField.getText();
-        System.out.println("Searching for game: " + gameName);
+        System.out.println("Searching: " + searchGameField.getText());
     }
 
     public void viewGameDetails(ActionEvent event) {

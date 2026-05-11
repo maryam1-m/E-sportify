@@ -32,15 +32,27 @@
                     </font>
                 </Label>
 
-                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0"
-                        style="-fx-background-color: #02182e;" text="     Dashboard" textFill="WHITE">
+                <Button onAction="#goToDashboard"
+                        mnemonicParsing="false"
+                        prefHeight="26.0"
+                        prefWidth="126.0"
+                        style="-fx-background-color: #02182e;"
+                        text="     Dashboard"
+                        textFill="WHITE">
+
                     <graphic>
-                        <ImageView fitHeight="22.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="22.0"
+                                   fitWidth="16.0"
+                                   pickOnBounds="true"
+                                   preserveRatio="true">
+
                             <image>
                                 <Image url="@images/progress.png" />
                             </image>
+
                         </ImageView>
                     </graphic>
+
                 </Button>
 
                 <Button onAction="#goToPlayers" mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0"
