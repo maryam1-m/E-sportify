@@ -14,271 +14,271 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
-   <left>
-      <VBox spacing="20.0" style="-fx-background-color: #02182e;" BorderPane.alignment="CENTER">
-         <children>
-            <Label prefHeight="41.0" prefWidth="113.0" text="   E-Sportify" textFill="#d3e2e7">
-               <font>
-                  <Font name="Century Schoolbook Bold" size="16.0" />
-               </font>
-            </Label>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #02182e;" text="     Dashboard" textFill="WHITE">
-               <font>
-                  <Font name="Arial" size="12.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="22.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="images/progress.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0" style="-fx-background-color: #02182e;" text="        Players" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/soccer-player.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="106.0" style="-fx-background-color: #02182e;" text="         Teams" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/team.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" style="-fx-background-color: #02182e;" text="     Tournments " textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="21.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/team-building.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #02182e;" text="    Matches" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/match (1).png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="101.0" style="-fx-background-color: #02182e;" text="    Games" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="32.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/game-controller.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: #02182e;" text="     Seasons" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="32.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/calendar.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="9.0" prefWidth="111.0" style="-fx-background-color: #02182e;" text="      LogOut" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="19.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/logout.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-         </children>
-         <padding>
-            <Insets left="20.0" />
-         </padding>
-         <effect>
-            <ColorAdjust />
-         </effect>
-      </VBox>
-   </left>
-   <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="524.0" spacing="10.0" style="-fx-background-color: #02182e;">
-         <children>
-            <Label alignment="CENTER" prefHeight="65.0" prefWidth="308.0" style="-fx-background-color: #02182e;" text="Ready to play, compete,and win?" textFill="#d3e2e7">
-               <font>
-                  <Font name="Century" size="14.0" />
-               </font>
-            </Label>
-            <HBox prefHeight="198.0" prefWidth="698.0" spacing="20.0">
-               <children>
-                  <VBox alignment="CENTER" prefHeight="125.0" prefWidth="214.0" style="-fx-border-radius: 20; -fx-background-radius: 35; -fx-background-color: #2b537e;">
-                     <children>
-                        <Label prefHeight="18.0" prefWidth="193.0" text="        Total Players" textFill="WHITE">
-                           <font>
-                              <Font name="ArtifaktElement-Heavy" size="19.0" />
-                           </font>
-                        </Label>
-                        <Line endX="100.0" opacity="0.65" startX="-35.013980865478516" startY="-0.6138650178909302" stroke="#d3e2e7" />
-                        <Label prefHeight="48.0" prefWidth="186.0" text="           120" textFill="WHITE">
-                           <font>
-                              <Font name="ArtifaktElement-Heavy" size="28.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="95.0" fitWidth="111.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@images/group.png" />
-                           </image>
-                           <viewport>
-                              <Rectangle2D />
-                           </viewport>
+<BorderPane fx:controller="org.example.controller.DashboardController"
+            maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="650.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+    <left>
+        <VBox spacing="20.0" style="-fx-background-color: #02182e;" BorderPane.alignment="CENTER">
+            <children>
+                <Label prefHeight="41.0" prefWidth="113.0" text="   E-Sportify" textFill="#d3e2e7">
+                    <font>
+                        <Font name="Century Schoolbook Bold" size="16.0" />
+                    </font>
+                </Label>
+
+                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0"
+                        style="-fx-background-color: #02182e;" text="     Dashboard" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/progress.png" />
+                            </image>
                         </ImageView>
-                     </children>
-                  </VBox>
-                  <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="142.0" prefWidth="214.0" style="-fx-border-radius: 20; -fx-background-radius: 35; -fx-background-color: #1d4052;">
-                     <children>
-                        <Label prefHeight="18.0" prefWidth="193.0" text="         Tournaments" textFill="WHITE">
-                           <font>
-                              <Font name="ArtifaktElement-Heavy" size="19.0" />
-                           </font>
-                           <effect>
-                              <Blend />
-                           </effect>
-                        </Label>
-                        <Line endX="100.0" opacity="0.65" startX="-35.013980865478516" startY="-0.6138650178909302" stroke="#d3e2e7" />
-                        <Label prefHeight="48.0" prefWidth="186.0" text="            20" textFill="WHITE">
-                           <font>
-                              <Font name="ArtifaktElement-Heavy" size="28.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="88.0" fitWidth="89.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@images/trophy.png" />
-                           </image>
-                           <viewport>
-                              <Rectangle2D />
-                           </viewport>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#goToPlayers" mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0"
+                        style="-fx-background-color: #02182e;" text="        Players" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/soccer-player.png" />
+                            </image>
                         </ImageView>
-                     </children>
-                  </VBox>
-                  <VBox alignment="CENTER" layoutX="244.0" layoutY="10.0" prefHeight="198.0" prefWidth="214.0" style="-fx-border-radius: 20; -fx-background-radius: 35; -fx-background-color: #8197ac;" styleClass="#8197ac">
-                     <children>
-                        <Label prefHeight="18.0" prefWidth="193.0" text="         Active Teams" textFill="WHITE">
-                           <font>
-                              <Font name="ArtifaktElement-Heavy" size="19.0" />
-                           </font>
-                        </Label>
-                        <Line endX="100.0" opacity="0.65" startX="-35.013980865478516" startY="-0.6138650178909302" stroke="#d3e2e7" />
-                        <Label prefHeight="48.0" prefWidth="186.0" text="            10" textFill="WHITE">
-                           <font>
-                              <Font name="ArtifaktElement-Heavy" size="28.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="85.0" fitWidth="99.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@images/player-versus-player.png" />
-                           </image>
-                           <viewport>
-                              <Rectangle2D />
-                           </viewport>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#goToTeams" mnemonicParsing="false" prefHeight="28.0" prefWidth="106.0"
+                        style="-fx-background-color: #02182e;" text="         Teams" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/team.png" />
+                            </image>
                         </ImageView>
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
-            <HBox layoutX="10.0" layoutY="221.0" prefHeight="318.0" prefWidth="698.0" spacing="30.0">
-               <children>
-                  <VBox prefHeight="318.0" prefWidth="174.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 20;">
-                     <children>
-                        <Label prefHeight="38.0" prefWidth="206.0" text="   Top Players" textFill="WHITE">
-                           <font>
-                              <Font name="ArtifaktElement-Heavy" size="19.0" />
-                           </font>
-                        </Label>
-                        <Line endX="190.67893981933594" endY="-0.6135637164115906" opacity="0.27" startX="-35.013980865478516" startY="-0.6138650178909302" stroke="#d3e2e7" />
-                        <Label prefHeight="31.0" prefWidth="171.0" text=" 1.ahmad ali" textFill="WHITE">
-                           <font>
-                              <Font name="Century" size="16.0" />
-                           </font>
-                        </Label>
-                        <Line endX="190.67893981933594" endY="-0.6135637164115906" opacity="0.27" startX="-35.013980865478516" startY="-0.6138650178909302" stroke="#d3e2e7" />
-                        <Label layoutX="10.0" layoutY="53.0" prefHeight="36.0" prefWidth="178.0" text=" 2.Maryam abdoh" textFill="WHITE">
-                           <font>
-                              <Font name="Century" size="16.0" />
-                           </font>
-                        </Label>
-                        <Line endX="190.67893981933594" endY="-0.6135637164115906" opacity="0.27" startX="-35.013980865478516" startY="-0.6138650178909302" stroke="#d3e2e7" />
-                        <Label layoutX="10.0" layoutY="73.0" prefHeight="34.0" prefWidth="178.0" text=" 3.Yamen Marie" textFill="WHITE">
-                           <font>
-                              <Font name="Century" size="16.0" />
-                           </font>
-                        </Label>
-                        <Line endX="190.67893981933594" endY="-0.6135637164115906" opacity="0.27" startX="-35.013980865478516" startY="-0.6138650178909302" stroke="#d3e2e7" />
-                        <Label layoutX="10.0" layoutY="93.0" prefHeight="30.0" prefWidth="181.0" text=" 4.Jana Salahat" textFill="WHITE">
-                           <font>
-                              <Font name="Century" size="16.0" />
-                           </font>
-                        </Label>
-                        <Line endX="190.67893981933594" endY="-0.6135637164115906" opacity="0.27" startX="-35.013980865478516" startY="-0.6138650178909302" stroke="#d3e2e7" />
-                        <Label layoutX="10.0" layoutY="93.0" prefHeight="29.0" prefWidth="178.0" text=" 5.Ali Mabrouk" textFill="WHITE">
-                           <font>
-                              <Font name="Century" size="16.0" />
-                           </font>
-                        </Label>
-                        <Line endX="190.67893981933594" endY="-0.6135637164115906" opacity="0.27" startX="-35.013980865478516" startY="-0.6138650178909302" stroke="#d3e2e7" />
-                        <Label layoutX="10.0" layoutY="133.0" prefHeight="31.0" prefWidth="180.0" text=" 6.Saif Mohammad" textFill="WHITE">
-                           <font>
-                              <Font name="Century" size="16.0" />
-                           </font>
-                        </Label>
-                        <Line endX="190.67893981933594" endY="-0.6135637164115906" opacity="0.27" startX="-35.013980865478516" startY="-0.6138650178909302" stroke="#d3e2e7" />
-                     </children>
-                  </VBox>
-                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="262.0" prefWidth="398.0" spacing="10.0" style="-fx-background-color: #022c50; -fx-background-radius: 20;">
-                     <children>
-                        <Label prefHeight="16.0" prefWidth="197.0" text="   Reacent Matches" textFill="WHITE">
-                           <font>
-                              <Font name="ArtifaktElement-Heavy" size="19.0" />
-                           </font>
-                        </Label>
-                        <Line endX="358.678955078125" endY="-0.6139375567436218" opacity="0.27" startX="-35.013980865478516" startY="-0.6138650178909302" stroke="#d3e2e7" />
-                        <Label prefHeight="20.0" prefWidth="350.0" text=" Team Lions        2 - 1         Shadow Wolves    " textFill="WHITE">
-                           <font>
-                              <Font name="Century" size="16.0" />
-                           </font>
-                        </Label>
-                        <Line endX="358.678955078125" endY="-0.6139375567436218" opacity="0.27" startX="-35.013980865478516" startY="-0.6138650178909302" stroke="#d3e2e7" />
-                        <Label layoutX="10.0" layoutY="67.0" prefHeight="20.0" prefWidth="350.0" text=" The winners       1 - 1         White Sharkes   " textFill="WHITE">
-                           <font>
-                              <Font name="Century" size="16.0" />
-                           </font>
-                        </Label>
-                        <Line endX="358.678955078125" endY="-0.6139375567436218" opacity="0.27" startX="-35.013980865478516" startY="-0.6138650178909302" stroke="#d3e2e7" />
-                        <Label layoutX="10.0" layoutY="67.0" prefHeight="20.0" prefWidth="350.0" text=" Iron Brokers      0 - 2         The Titans   " textFill="WHITE">
-                           <font>
-                              <Font name="Century" size="16.0" />
-                           </font>
-                        </Label>
-                        <Line endX="358.678955078125" endY="-0.6139375567436218" opacity="0.27" startX="-35.013980865478516" startY="-0.6138650178909302" stroke="#d3e2e7" />
-                        <Label layoutX="10.0" layoutY="67.0" prefHeight="20.0" prefWidth="350.0" text=" Nexus Sqaud     2 - 1         Apex Legends   " textFill="WHITE">
-                           <font>
-                              <Font name="Century" size="16.0" />
-                           </font>
-                        </Label>
-                        <Line endX="358.678955078125" endY="-0.6139375567436218" opacity="0.27" startX="-35.013980865478516" startY="-0.6138650178909302" stroke="#d3e2e7" />
-                     </children>
-                     <effect>
-                        <Blend />
-                     </effect>
-                  </VBox>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-   </center>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#goToTournaments" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0"
+                        style="-fx-background-color: #02182e;" text="     Tournments " textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="21.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/team-building.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#goToMatches" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0"
+                        style="-fx-background-color: #02182e;" text="    Matches" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/match (1).png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#goToGames" mnemonicParsing="false" prefHeight="30.0" prefWidth="101.0"
+                        style="-fx-background-color: #02182e;" text="    Games" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/game-controller.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#goToSeasons" mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0"
+                        style="-fx-background-color: #02182e;" text="     Seasons" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/calendar.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#logout" mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0"
+                        style="-fx-background-color: #02182e;" text="      LogOut" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="19.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/logout.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+
+            <padding>
+                <Insets left="20.0" />
+            </padding>
+
+            <effect>
+                <ColorAdjust />
+            </effect>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="524.0" spacing="10.0"
+              style="-fx-background-color: #02182e;">
+            <children>
+
+                <Label alignment="CENTER" prefHeight="65.0" prefWidth="308.0"
+                       style="-fx-background-color: #02182e;"
+                       text="Ready to play, compete,and win?" textFill="#d3e2e7">
+                    <font>
+                        <Font name="Century" size="14.0" />
+                    </font>
+                </Label>
+
+                <HBox prefHeight="198.0" prefWidth="698.0" spacing="20.0">
+                    <children>
+
+                        <VBox alignment="CENTER" prefHeight="125.0" prefWidth="214.0"
+                              style="-fx-border-radius: 20; -fx-background-radius: 35; -fx-background-color: #2b537e;">
+                            <children>
+                                <Label prefHeight="18.0" prefWidth="193.0" text="        Total Players" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="19.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="100.0" opacity="0.65" startX="-35.013980865478516" stroke="#d3e2e7" />
+                                <Label prefHeight="48.0" prefWidth="186.0" text="           120" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="28.0" />
+                                    </font>
+                                </Label>
+                                <ImageView fitHeight="95.0" fitWidth="111.0" pickOnBounds="true">
+                                    <image>
+                                        <Image url="@images/group.png" />
+                                    </image>
+                                    <viewport>
+                                        <Rectangle2D />
+                                    </viewport>
+                                </ImageView>
+                            </children>
+                        </VBox>
+
+                        <VBox alignment="CENTER" prefHeight="142.0" prefWidth="214.0"
+                              style="-fx-border-radius: 20; -fx-background-radius: 35; -fx-background-color: #1d4052;">
+                            <children>
+                                <Label prefHeight="18.0" prefWidth="193.0" text="         Tournaments" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="19.0" />
+                                    </font>
+                                    <effect>
+                                        <Blend />
+                                    </effect>
+                                </Label>
+                                <Line endX="100.0" opacity="0.65" startX="-35.013980865478516" stroke="#d3e2e7" />
+                                <Label prefHeight="48.0" prefWidth="186.0" text="            20" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="28.0" />
+                                    </font>
+                                </Label>
+                                <ImageView fitHeight="88.0" fitWidth="89.0" pickOnBounds="true">
+                                    <image>
+                                        <Image url="@images/trophy.png" />
+                                    </image>
+                                    <viewport>
+                                        <Rectangle2D />
+                                    </viewport>
+                                </ImageView>
+                            </children>
+                        </VBox>
+
+                        <VBox alignment="CENTER" prefHeight="198.0" prefWidth="214.0"
+                              style="-fx-border-radius: 20; -fx-background-radius: 35; -fx-background-color: #8197ac;">
+                            <children>
+                                <Label prefHeight="18.0" prefWidth="193.0" text="         Active Teams" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="19.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="100.0" opacity="0.65" startX="-35.013980865478516" stroke="#d3e2e7" />
+                                <Label prefHeight="48.0" prefWidth="186.0" text="            10" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="28.0" />
+                                    </font>
+                                </Label>
+                                <ImageView fitHeight="85.0" fitWidth="99.0" pickOnBounds="true">
+                                    <image>
+                                        <Image url="@images/player-versus-player.png" />
+                                    </image>
+                                    <viewport>
+                                        <Rectangle2D />
+                                    </viewport>
+                                </ImageView>
+                            </children>
+                        </VBox>
+
+                    </children>
+                </HBox>
+
+                <HBox prefHeight="318.0" prefWidth="698.0" spacing="30.0">
+                    <children>
+
+                        <VBox prefHeight="318.0" prefWidth="174.0"
+                              style="-fx-background-color: #5f86a6; -fx-background-radius: 20;">
+                            <children>
+                                <Label prefHeight="38.0" prefWidth="206.0" text="   Top Players" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="19.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="190.67893981933594" opacity="0.27" startX="-35.013980865478516" stroke="#d3e2e7" />
+                                <Label prefHeight="31.0" prefWidth="171.0" text=" 1.ahmad ali" textFill="WHITE" />
+                                <Line endX="190.67893981933594" opacity="0.27" startX="-35.013980865478516" stroke="#d3e2e7" />
+                                <Label prefHeight="36.0" prefWidth="178.0" text=" 2.Maryam abdoh" textFill="WHITE" />
+                                <Line endX="190.67893981933594" opacity="0.27" startX="-35.013980865478516" stroke="#d3e2e7" />
+                                <Label prefHeight="34.0" prefWidth="178.0" text=" 3.Yamen Marie" textFill="WHITE" />
+                                <Line endX="190.67893981933594" opacity="0.27" startX="-35.013980865478516" stroke="#d3e2e7" />
+                                <Label prefHeight="30.0" prefWidth="181.0" text=" 4.Jana Salahat" textFill="WHITE" />
+                                <Line endX="190.67893981933594" opacity="0.27" startX="-35.013980865478516" stroke="#d3e2e7" />
+                                <Label prefHeight="29.0" prefWidth="178.0" text=" 5.Ali Mabrouk" textFill="WHITE" />
+                                <Line endX="190.67893981933594" opacity="0.27" startX="-35.013980865478516" stroke="#d3e2e7" />
+                                <Label prefHeight="31.0" prefWidth="180.0" text=" 6.Saif Mohammad" textFill="WHITE" />
+                            </children>
+                        </VBox>
+
+                        <VBox prefHeight="262.0" prefWidth="398.0" spacing="10.0"
+                              style="-fx-background-color: #022c50; -fx-background-radius: 20;">
+                            <children>
+                                <Label prefHeight="16.0" prefWidth="197.0" text="   Reacent Matches" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="19.0" />
+                                    </font>
+                                </Label>
+                                <Line endX="358.678955078125" opacity="0.27" startX="-35.013980865478516" stroke="#d3e2e7" />
+                                <Label prefHeight="20.0" prefWidth="350.0" text=" Team Lions        2 - 1         Shadow Wolves    " textFill="WHITE" />
+                                <Line endX="358.678955078125" opacity="0.27" startX="-35.013980865478516" stroke="#d3e2e7" />
+                                <Label prefHeight="20.0" prefWidth="350.0" text=" The winners       1 - 1         White Sharkes   " textFill="WHITE" />
+                                <Line endX="358.678955078125" opacity="0.27" startX="-35.013980865478516" stroke="#d3e2e7" />
+                                <Label prefHeight="20.0" prefWidth="350.0" text=" Iron Brokers      0 - 2         The Titans   " textFill="WHITE" />
+                                <Line endX="358.678955078125" opacity="0.27" startX="-35.013980865478516" stroke="#d3e2e7" />
+                                <Label prefHeight="20.0" prefWidth="350.0" text=" Nexus Sqaud     2 - 1         Apex Legends   " textFill="WHITE" />
+                            </children>
+                            <effect>
+                                <Blend />
+                            </effect>
+                        </VBox>
+
+                    </children>
+                </HBox>
+
+            </children>
+        </VBox>
+    </center>
+
 </BorderPane>

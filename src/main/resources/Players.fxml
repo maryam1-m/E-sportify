@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:controller="org.example.controller.DashboardController"
+            prefHeight="650.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+    <!-- ================= LEFT SIDEBAR ================= -->
+    <left>
+        <VBox spacing="20.0" style="-fx-background-color: #02182e;" BorderPane.alignment="CENTER">
+            <children>
+
+                <Label text="   E-Sportify" textFill="#d3e2e7">
+                    <font>
+                        <Font name="Century Schoolbook Bold" size="16.0"/>
+                    </font>
+                </Label>
+
+                <Button text="     Dashboard" textFill="WHITE" style="-fx-background-color: #02182e;">
+                    <graphic>
+                        <ImageView fitHeight="22" fitWidth="16">
+                            <image>
+                                <Image url="@images/progress.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button text="        Players" textFill="WHITE" style="-fx-background-color: #02182e;">
+                    <graphic>
+                        <ImageView fitHeight="17" fitWidth="39">
+                            <image>
+                                <Image url="@images/soccer-player.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button text="         Teams" textFill="WHITE" style="-fx-background-color: #02182e;">
+                    <graphic>
+                        <ImageView fitHeight="20" fitWidth="25">
+                            <image>
+                                <Image url="@images/team.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button text="     Tournments" textFill="WHITE" style="-fx-background-color: #02182e;">
+                    <graphic>
+                        <ImageView fitHeight="21" fitWidth="27">
+                            <image>
+                                <Image url="@images/team-building.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button text="    Matches" textFill="WHITE" style="-fx-background-color: #02182e;">
+                    <graphic>
+                        <ImageView fitHeight="26" fitWidth="26">
+                            <image>
+                                <Image url="@images/match (1).png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button text="    Games" textFill="WHITE" style="-fx-background-color: #02182e;">
+                    <graphic>
+                        <ImageView fitHeight="32" fitWidth="28">
+                            <image>
+                                <Image url="@images/game-controller.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button text="     Seasons" textFill="WHITE" style="-fx-background-color: #02182e;">
+                    <graphic>
+                        <ImageView fitHeight="32" fitWidth="22">
+                            <image>
+                                <Image url="@images/calendar.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button text="      LogOut" textFill="WHITE" style="-fx-background-color: #02182e;">
+                    <graphic>
+                        <ImageView fitHeight="19" fitWidth="25">
+                            <image>
+                                <Image url="@images/logout.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+            </children>
+
+            <padding>
+                <Insets left="20.0"/>
+            </padding>
+
+            <effect>
+                <ColorAdjust/>
+            </effect>
+
+        </VBox>
+    </left>
+
+    <!-- ================= CENTER (PLAYERS USER) ================= -->
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="25"
+              style="-fx-background-color: #02182e;">
+
+            <padding>
+                <Insets top="30" left="25" right="25" bottom="25"/>
+            </padding>
+
+            <!-- Title -->
+            <Label text="Players Overview" textFill="#d3e2e7">
+                <font>
+                    <Font name="Century Schoolbook Bold" size="26"/>
+                </font>
+            </Label>
+
+            <!-- Subtitle -->
+            <Label text="Explore players, teams, and ranking points"
+                   textFill="#d3e2e7">
+                <font>
+                    <Font size="14"/>
+                </font>
+            </Label>
+
+            <!-- 👇 هون تقدري تحطي صورة -->
+            <!-- ImageView -->
+
+            <!-- Players Box -->
+            <VBox spacing="12"
+                  prefWidth="520"
+                  style="-fx-background-color: #022c50; -fx-background-radius: 20; -fx-padding: 20;">
+
+                <Label text="Top Players" textFill="WHITE">
+                    <font>
+                        <Font name="ArtifaktElement-Heavy" size="20"/>
+                    </font>
+                </Label>
+
+                <Line endX="480" opacity="0.3" stroke="#d3e2e7"/>
+
+                <Label text="1. Ahmad Ali        | Team Lions        | 950 pts" textFill="WHITE"/>
+                <Label text="2. Maryam Abdoh     | Shadow Wolves     | 870 pts" textFill="WHITE"/>
+                <Label text="3. Jana Salahat     | Apex Squad        | 820 pts" textFill="WHITE"/>
+                <Label text="4. Yamen Marie      | The Titans        | 760 pts" textFill="WHITE"/>
+                <Label text="5. Ali Mabrouk      | Iron Brokers      | 700 pts" textFill="WHITE"/>
+                <Label text="6. Saif Mohammad    | Nexus Squad       | 650 pts" textFill="WHITE"/>
+
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>
