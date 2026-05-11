@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:controller="org.example.controller.TournamentsController"
+            maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="650.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+    <!-- ================= LEFT SIDEBAR ================= -->
+    <left>
+        <VBox spacing="20.0" style="-fx-background-color: #02182e;" BorderPane.alignment="CENTER">
+            <children>
+
+                <Label prefHeight="41.0" prefWidth="113.0" text="   E-Sportify" textFill="#d3e2e7">
+                    <font>
+                        <Font name="Century Schoolbook Bold" size="16.0" />
+                    </font>
+                </Label>
+
+                <Button onAction="#goToDashboard" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0"
+                        style="-fx-background-color: #02182e;" text="     Dashboard" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/progress.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#goToPlayers" mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0"
+                        style="-fx-background-color: #02182e;" text="        Players" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/soccer-player.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#goToTeams" mnemonicParsing="false" prefHeight="28.0" prefWidth="106.0"
+                        style="-fx-background-color: #02182e;" text="         Teams" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/team.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <!-- Current Page -->
+                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0"
+                        style="-fx-background-color: #0b345c; -fx-background-radius: 12;"
+                        text="     Tournments " textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="21.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/team-building.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#goToMatches" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0"
+                        style="-fx-background-color: #02182e;" text="    Matches" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/match (1).png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#goToGames" mnemonicParsing="false" prefHeight="30.0" prefWidth="101.0"
+                        style="-fx-background-color: #02182e;" text="    Games" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/game-controller.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#goToSeasons" mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0"
+                        style="-fx-background-color: #02182e;" text="     Seasons" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/calendar.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#logout" mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0"
+                        style="-fx-background-color: #02182e;" text="      LogOut" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="19.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/logout.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+            </children>
+
+            <padding>
+                <Insets left="20.0" />
+            </padding>
+        </VBox>
+    </left>
+
+    <!-- ================= CENTER CONTENT ================= -->
+    <center>
+        <VBox prefHeight="650.0" prefWidth="740.0" spacing="16.0"
+              style="-fx-background-color: #02182e;">
+            <padding>
+                <Insets top="24.0" right="30.0" bottom="24.0" left="30.0" />
+            </padding>
+
+            <children>
+
+                <!-- Header -->
+                <HBox prefHeight="75.0" prefWidth="680.0" spacing="25.0">
+                    <children>
+
+                        <VBox prefHeight="75.0" prefWidth="430.0" spacing="5.0">
+                            <children>
+                                <Label text="Tournaments" textFill="#d3e2e7">
+                                    <font>
+                                        <Font name="Century Schoolbook Bold" size="28.0" />
+                                    </font>
+                                </Label>
+
+                                <Label text="Manage tournaments, follow their seasons, games, teams, and match progress."
+                                       textFill="#8197ac" wrapText="true">
+                                    <font>
+                                        <Font name="Century" size="13.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+
+                        <VBox alignment="CENTER" prefHeight="75.0" prefWidth="210.0"
+                              style="-fx-background-color: #022c50; -fx-background-radius: 25;">
+                            <children>
+                                <Label text="Total Tournaments" textFill="#d3e2e7">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="16.0" />
+                                    </font>
+                                </Label>
+
+                                <Label text="20" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="28.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+
+                    </children>
+                </HBox>
+
+                <!-- Search + Add -->
+                <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="680.0" spacing="15.0">
+                    <children>
+
+                        <TextField fx:id="searchTournamentField"
+                                   prefHeight="38.0" prefWidth="430.0"
+                                   promptText="Search tournament..."
+                                   style="-fx-background-color: #d3e2e7;
+                                          -fx-background-radius: 20;
+                                          -fx-text-fill: #02182e;
+                                          -fx-prompt-text-fill: #5f86a6;
+                                          -fx-padding: 0 15 0 15;" />
+
+                        <Button onAction="#searchTournament"
+                                mnemonicParsing="false"
+                                prefHeight="38.0" prefWidth="105.0"
+                                text="Search"
+                                textFill="WHITE"
+                                style="-fx-background-color: #2b537e;
+                                       -fx-background-radius: 20;">
+                            <font>
+                                <Font name="ArtifaktElement-Heavy" size="14.0" />
+                            </font>
+                        </Button>
+
+                        <Button onAction="#addTournament"
+                                mnemonicParsing="false"
+                                prefHeight="38.0" prefWidth="120.0"
+                                text="+ Add"
+                                textFill="WHITE"
+                                style="-fx-background-color: #5f86a6;
+                                       -fx-background-radius: 20;">
+                            <font>
+                                <Font name="ArtifaktElement-Heavy" size="13.0" />
+                            </font>
+                        </Button>
+
+                    </children>
+                </HBox>
+
+                <!-- Statistics Cards -->
+                <HBox prefHeight="125.0" prefWidth="680.0" spacing="20.0">
+                    <children>
+
+                        <VBox alignment="CENTER" prefHeight="125.0" prefWidth="210.0"
+                              style="-fx-background-color: #2b537e; -fx-background-radius: 30;">
+                            <children>
+                                <!-- هون ممكن تحطي صورة أو أيقونة بطولة -->
+                                <ImageView fitHeight="45.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/team-building.png" />
+                                    </image>
+                                </ImageView>
+
+                                <Label text="Active" textFill="#d3e2e7">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="15.0" />
+                                    </font>
+                                </Label>
+
+                                <Label text="8" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="26.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+
+                        <VBox alignment="CENTER" prefHeight="125.0" prefWidth="210.0"
+                              style="-fx-background-color: #1d4052; -fx-background-radius: 30;">
+                            <children>
+                                <ImageView fitHeight="45.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/match (1).png" />
+                                    </image>
+                                </ImageView>
+
+                                <Label text="Total Matches" textFill="#d3e2e7">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="15.0" />
+                                    </font>
+                                </Label>
+
+                                <Label text="64" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="26.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+
+                        <VBox alignment="CENTER" prefHeight="125.0" prefWidth="210.0"
+                              style="-fx-background-color: #8197ac; -fx-background-radius: 30;">
+                            <children>
+                                <ImageView fitHeight="45.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/team.png" />
+                                    </image>
+                                </ImageView>
+
+                                <Label text="Joined Teams" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="15.0" />
+                                    </font>
+                                </Label>
+
+                                <Label text="32" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="26.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+
+                    </children>
+                </HBox>
+
+                <!-- Featured Tournament -->
+                <HBox prefHeight="150.0" prefWidth="680.0" spacing="20.0">
+                    <children>
+
+                        <VBox alignment="CENTER" prefHeight="150.0" prefWidth="230.0"
+                              style="-fx-background-color: #5f86a6; -fx-background-radius: 30;">
+                            <children>
+                                <!-- هون بتحطي صورة البطولة إذا عندكم صورة -->
+                                <ImageView fitHeight="85.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/trophy.png" />
+                                    </image>
+                                    <viewport>
+                                        <Rectangle2D />
+                                    </viewport>
+                                </ImageView>
+
+                                <Label text="Featured Tournament" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="17.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+
+                        <VBox prefHeight="150.0" prefWidth="430.0" spacing="8.0"
+                              style="-fx-background-color: #022c50; -fx-background-radius: 30;">
+                            <padding>
+                                <Insets top="16.0" right="20.0" bottom="16.0" left="20.0" />
+                            </padding>
+
+                            <children>
+                                <Label text="Spring Valorant Cup" textFill="WHITE">
+                                    <font>
+                                        <Font name="Century Schoolbook Bold" size="23.0" />
+                                    </font>
+                                </Label>
+
+                                <Label text="A seasonal tournament where registered teams compete through multiple rounds until the final match."
+                                       wrapText="true" textFill="#d3e2e7">
+                                    <font>
+                                        <Font name="Century" size="13.0" />
+                                    </font>
+                                </Label>
+
+                                <HBox spacing="15.0">
+                                    <children>
+                                        <VBox alignment="CENTER" prefHeight="48.0" prefWidth="105.0"
+                                              style="-fx-background-color: #1d4052; -fx-background-radius: 16;">
+                                            <children>
+                                                <Label text="Game" textFill="#d3e2e7" />
+                                                <Label text="Valorant" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="ArtifaktElement-Heavy" size="14.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </VBox>
+
+                                        <VBox alignment="CENTER" prefHeight="48.0" prefWidth="105.0"
+                                              style="-fx-background-color: #1d4052; -fx-background-radius: 16;">
+                                            <children>
+                                                <Label text="Teams" textFill="#d3e2e7" />
+                                                <Label text="8" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="ArtifaktElement-Heavy" size="17.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </VBox>
+
+                                        <VBox alignment="CENTER" prefHeight="48.0" prefWidth="120.0"
+                                              style="-fx-background-color: #1d4052; -fx-background-radius: 16;">
+                                            <children>
+                                                <Label text="Status" textFill="#d3e2e7" />
+                                                <Label text="Active" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="ArtifaktElement-Heavy" size="15.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                    </children>
+                </HBox>
+
+                <!-- Tournaments Table -->
+                <VBox prefHeight="230.0" prefWidth="680.0" spacing="7.0"
+                      style="-fx-background-color: #022c50; -fx-background-radius: 25;">
+                    <padding>
+                        <Insets top="14.0" right="18.0" bottom="14.0" left="18.0" />
+                    </padding>
+
+                    <children>
+
+                        <HBox prefHeight="32.0" prefWidth="640.0">
+                            <children>
+                                <Label prefWidth="165.0" text="Tournament" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="15.0" />
+                                    </font>
+                                </Label>
+
+                                <Label prefWidth="105.0" text="Game" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="15.0" />
+                                    </font>
+                                </Label>
+
+                                <Label prefWidth="105.0" text="Season" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="15.0" />
+                                    </font>
+                                </Label>
+
+                                <Label prefWidth="75.0" text="Teams" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="15.0" />
+                                    </font>
+                                </Label>
+
+                                <Label prefWidth="90.0" text="Status" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="15.0" />
+                                    </font>
+                                </Label>
+
+                                <Label prefWidth="80.0" text="Action" textFill="WHITE">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="15.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+
+                        <Line endX="640.0" opacity="0.30" stroke="#d3e2e7" />
+
+                        <!-- Row 1 -->
+                        <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="640.0">
+                            <children>
+                                <Label prefWidth="165.0" text="Spring Valorant Cup" textFill="#d3e2e7" />
+                                <Label prefWidth="105.0" text="Valorant" textFill="#d3e2e7" />
+                                <Label prefWidth="105.0" text="Spring 2026" textFill="#d3e2e7" />
+                                <Label prefWidth="75.0" text="8" textFill="#d3e2e7" />
+                                <Label prefWidth="90.0" text="Active" textFill="#d3e2e7" />
+
+                                <Button onAction="#viewTournamentDetails"
+                                        mnemonicParsing="false"
+                                        prefHeight="25.0" prefWidth="70.0"
+                                        text="View"
+                                        textFill="WHITE"
+                                        style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" />
+                            </children>
+                        </HBox>
+
+                        <Line endX="640.0" opacity="0.18" stroke="#d3e2e7" />
+
+                        <!-- Row 2 -->
+                        <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="640.0">
+                            <children>
+                                <Label prefWidth="165.0" text="FIFA Pro League" textFill="#d3e2e7" />
+                                <Label prefWidth="105.0" text="FIFA 25" textFill="#d3e2e7" />
+                                <Label prefWidth="105.0" text="Winter 2026" textFill="#d3e2e7" />
+                                <Label prefWidth="75.0" text="12" textFill="#d3e2e7" />
+                                <Label prefWidth="90.0" text="Upcoming" textFill="#d3e2e7" />
+
+                                <Button onAction="#viewTournamentDetails"
+                                        mnemonicParsing="false"
+                                        prefHeight="25.0" prefWidth="70.0"
+                                        text="View"
+                                        textFill="WHITE"
+                                        style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" />
+                            </children>
+                        </HBox>
+
+                        <Line endX="640.0" opacity="0.18" stroke="#d3e2e7" />
+
+                        <!-- Row 3 -->
+                        <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="640.0">
+                            <children>
+                                <Label prefWidth="165.0" text="Rocket League Clash" textFill="#d3e2e7" />
+                                <Label prefWidth="105.0" text="Rocket League" textFill="#d3e2e7" />
+                                <Label prefWidth="105.0" text="Fall 2025" textFill="#d3e2e7" />
+                                <Label prefWidth="75.0" text="6" textFill="#d3e2e7" />
+                                <Label prefWidth="90.0" text="Finished" textFill="#d3e2e7" />
+
+                                <Button onAction="#viewTournamentDetails"
+                                        mnemonicParsing="false"
+                                        prefHeight="25.0" prefWidth="70.0"
+                                        text="View"
+                                        textFill="WHITE"
+                                        style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" />
+                            </children>
+                        </HBox>
+
+                    </children>
+                </VBox>
+
+            </children>
+        </VBox>
+    </center>
+
+</BorderPane>

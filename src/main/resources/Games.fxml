@@ -424,7 +424,8 @@
                                 <Label text="Players: 3 vs 3" textFill="WHITE" />
                                 <Label text="Active Teams: 5" textFill="WHITE" />
 
-                                <Button onAction="#viewGameDetails"
+                                <Button onAction="#viewG
+                                ameDetails"
                                         mnemonicParsing="false"
                                         prefHeight="30.0" prefWidth="175.0"
                                         text="View Details"

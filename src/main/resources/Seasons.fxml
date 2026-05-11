@@ -15,16 +15,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:controller="org.example.controller.DashboardController"
-            maxHeight="-Infinity" maxWidth="-Infinity"
-            minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="650.0" prefWidth="900.0"
-            xmlns="http://javafx.com/javafx/25"
-            xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.DashboardController">
 
     <!-- ================= LEFT SIDEBAR - same dashboard style ================= -->
     <left>
-        <VBox spacing="20.0" style="-fx-background-color: #02182e;" BorderPane.alignment="CENTER">
+        <VBox prefWidth="178.0" spacing="20.0" style="-fx-background-color: #02182e;" BorderPane.alignment="CENTER">
             <children>
                 <Label prefHeight="41.0" prefWidth="113.0" text="   E-Sportify" textFill="#d3e2e7">
                     <font>
@@ -32,8 +27,7 @@
                     </font>
                 </Label>
 
-                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0"
-                        style="-fx-background-color: #02182e;" text="     Dashboard" textFill="WHITE">
+                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #02182e;" text="     Dashboard" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="22.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -43,8 +37,7 @@
                     </graphic>
                 </Button>
 
-                <Button onAction="#goToPlayers" mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0"
-                        style="-fx-background-color: #02182e;" text="        Players" textFill="WHITE">
+                <Button mnemonicParsing="false" onAction="#goToPlayers" prefHeight="26.0" prefWidth="107.0" style="-fx-background-color: #02182e;" text="        Players" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="17.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -54,8 +47,7 @@
                     </graphic>
                 </Button>
 
-                <Button onAction="#goToTeams" mnemonicParsing="false" prefHeight="28.0" prefWidth="106.0"
-                        style="-fx-background-color: #02182e;" text="         Teams" textFill="WHITE">
+                <Button mnemonicParsing="false" onAction="#goToTeams" prefHeight="28.0" prefWidth="106.0" style="-fx-background-color: #02182e;" text="         Teams" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -65,8 +57,7 @@
                     </graphic>
                 </Button>
 
-                <Button onAction="#goToTournaments" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0"
-                        style="-fx-background-color: #02182e;" text="     Tournaments" textFill="WHITE">
+                <Button mnemonicParsing="false" onAction="#goToTournaments" prefHeight="26.0" prefWidth="132.0" style="-fx-background-color: #02182e;" text="     Tournaments" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="21.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -76,8 +67,7 @@
                     </graphic>
                 </Button>
 
-                <Button onAction="#goToMatches" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0"
-                        style="-fx-background-color: #02182e;" text="    Matches" textFill="WHITE">
+                <Button mnemonicParsing="false" onAction="#goToMatches" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #02182e;" text="    Matches" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -87,8 +77,7 @@
                     </graphic>
                 </Button>
 
-                <Button onAction="#goToGames" mnemonicParsing="false" prefHeight="30.0" prefWidth="101.0"
-                        style="-fx-background-color: #02182e;" text="    Games" textFill="WHITE">
+                <Button mnemonicParsing="false" onAction="#goToGames" prefHeight="30.0" prefWidth="101.0" style="-fx-background-color: #02182e;" text="    Games" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="32.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -98,8 +87,7 @@
                     </graphic>
                 </Button>
 
-                <Button onAction="#goToSeasons" mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0"
-                        style="-fx-background-color: #022c50; -fx-background-radius: 12;" text="     Seasons" textFill="WHITE">
+                <Button mnemonicParsing="false" onAction="#goToSeasons" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: #022c50; -fx-background-radius: 12;" text="     Seasons" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="32.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -109,8 +97,7 @@
                     </graphic>
                 </Button>
 
-                <Button onAction="#logout" mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0"
-                        style="-fx-background-color: #02182e;" text="      LogOut" textFill="WHITE">
+                <Button mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: #02182e;" text="      LogOut" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="19.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -133,16 +120,14 @@
 
     <!-- ================= CENTER - SEASONS USER SCREEN ================= -->
     <center>
-        <VBox alignment="TOP_CENTER" prefHeight="650.0" prefWidth="724.0" spacing="16.0"
-              style="-fx-background-color: #02182e;">
+        <VBox alignment="TOP_CENTER" prefHeight="650.0" prefWidth="724.0" spacing="16.0" style="-fx-background-color: #02182e;">
             <padding>
-                <Insets top="25.0" right="25.0" bottom="22.0" left="25.0" />
+                <Insets bottom="22.0" left="25.0" right="25.0" top="25.0" />
             </padding>
 
             <children>
                 <!-- Header -->
-                <HBox alignment="CENTER_LEFT" prefHeight="78.0" prefWidth="675.0" spacing="18.0"
-                      style="-fx-background-color: #022c50; -fx-background-radius: 22; -fx-padding: 14 20 14 20;">
+                <HBox alignment="CENTER_LEFT" prefHeight="78.0" prefWidth="675.0" spacing="18.0" style="-fx-background-color: #022c50; -fx-background-radius: 22; -fx-padding: 14 20 14 20;">
                     <children>
                         <VBox spacing="5.0" HBox.hgrow="ALWAYS">
                             <children>
@@ -174,8 +159,7 @@
                 <!-- Summary Cards -->
                 <HBox alignment="CENTER" prefHeight="125.0" prefWidth="675.0" spacing="18.0">
                     <children>
-                        <VBox alignment="CENTER" prefHeight="112.0" prefWidth="210.0" spacing="6.0"
-                              style="-fx-background-color: #2b537e; -fx-background-radius: 28;">
+                        <VBox alignment="CENTER" prefHeight="112.0" prefWidth="210.0" spacing="6.0" style="-fx-background-color: #2b537e; -fx-background-radius: 28;">
                             <children>
                                 <Label text="Current Season" textFill="WHITE">
                                     <font>
@@ -192,8 +176,7 @@
                             </children>
                         </VBox>
 
-                        <VBox alignment="CENTER" prefHeight="112.0" prefWidth="210.0" spacing="6.0"
-                              style="-fx-background-color: #1d4052; -fx-background-radius: 28;">
+                        <VBox alignment="CENTER" prefHeight="112.0" prefWidth="210.0" spacing="6.0" style="-fx-background-color: #1d4052; -fx-background-radius: 28;">
                             <children>
                                 <Label text="Season Tournaments" textFill="WHITE">
                                     <font>
@@ -213,8 +196,7 @@
                             </children>
                         </VBox>
 
-                        <VBox alignment="CENTER" prefHeight="112.0" prefWidth="210.0" spacing="6.0"
-                              style="-fx-background-color: #8197ac; -fx-background-radius: 28;">
+                        <VBox alignment="CENTER" prefHeight="112.0" prefWidth="210.0" spacing="6.0" style="-fx-background-color: #8197ac; -fx-background-radius: 28;">
                             <children>
                                 <Label text="Registered Teams" textFill="WHITE">
                                     <font>
@@ -237,8 +219,7 @@
                 <HBox alignment="TOP_CENTER" prefHeight="365.0" prefWidth="675.0" spacing="22.0">
                     <children>
                         <!-- Featured Season Card -->
-                        <VBox prefHeight="345.0" prefWidth="270.0" spacing="12.0"
-                              style="-fx-background-color: #5f86a6; -fx-background-radius: 22; -fx-padding: 18;">
+                        <VBox prefHeight="397.0" prefWidth="279.0" spacing="12.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 22; -fx-padding: 18;">
                             <children>
                                 <Label text="Featured Season" textFill="WHITE">
                                     <font>
@@ -248,8 +229,7 @@
                                 <Line endX="225.0" opacity="0.3" startX="-18.0" stroke="#d3e2e7" />
 
                                 <!-- هون ممكن تحطي صورة كبيرة للسيزون إذا بدك -->
-                                <VBox alignment="CENTER" prefHeight="88.0" prefWidth="230.0"
-                                      style="-fx-background-color: #022c50; -fx-background-radius: 18;">
+                                <VBox alignment="CENTER" prefHeight="88.0" prefWidth="230.0" style="-fx-background-color: #022c50; -fx-background-radius: 18;">
                                     <children>
                                         <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
@@ -271,15 +251,12 @@
 
                                 <Region VBox.vgrow="ALWAYS" />
 
-                                <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="230.0"
-                                        style="-fx-background-color: #02182e; -fx-background-radius: 16;"
-                                        text="View Season Details" textFill="WHITE" />
+                                <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="230.0" style="-fx-background-color: #02182e; -fx-background-radius: 16;" text="View Season Details" textFill="WHITE" />
                             </children>
                         </VBox>
 
                         <!-- Seasons List -->
-                        <VBox prefHeight="345.0" prefWidth="380.0" spacing="10.0"
-                              style="-fx-background-color: #022c50; -fx-background-radius: 22; -fx-padding: 16;">
+                        <VBox prefHeight="345.0" prefWidth="380.0" spacing="10.0" style="-fx-background-color: #022c50; -fx-background-radius: 22; -fx-padding: 16;">
                             <children>
                                 <HBox alignment="CENTER_LEFT" spacing="10.0">
                                     <children>
@@ -288,16 +265,13 @@
                                                 <Font name="ArtifaktElement-Heavy" size="20.0" />
                                             </font>
                                         </Label>
-                                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="82.0"
-                                                style="-fx-background-color: #2b537e; -fx-background-radius: 14;"
-                                                text="Filter" textFill="WHITE" />
+                                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="82.0" style="-fx-background-color: #2b537e; -fx-background-radius: 14;" text="Filter" textFill="WHITE" />
                                     </children>
                                 </HBox>
 
                                 <Line endX="330.0" opacity="0.27" startX="-16.0" stroke="#d3e2e7" />
 
-                                <HBox alignment="CENTER_LEFT" spacing="14.0"
-                                      style="-fx-background-color: #1d4052; -fx-background-radius: 15; -fx-padding: 10;">
+                                <HBox alignment="CENTER_LEFT" spacing="14.0" style="-fx-background-color: #1d4052; -fx-background-radius: 15; -fx-padding: 10;">
                                     <children>
                                         <VBox spacing="4.0" HBox.hgrow="ALWAYS">
                                             <children>
@@ -308,14 +282,11 @@
                                                 <Label text="Status: Active | 8 tournaments" textFill="#d3e2e7" />
                                             </children>
                                         </VBox>
-                                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="70.0"
-                                                style="-fx-background-color: #5f86a6; -fx-background-radius: 12;"
-                                                text="Open" textFill="WHITE" />
+                                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 12;" text="Open" textFill="WHITE" />
                                     </children>
                                 </HBox>
 
-                                <HBox alignment="CENTER_LEFT" spacing="14.0"
-                                      style="-fx-background-color: #1d4052; -fx-background-radius: 15; -fx-padding: 10;">
+                                <HBox alignment="CENTER_LEFT" spacing="14.0" style="-fx-background-color: #1d4052; -fx-background-radius: 15; -fx-padding: 10;">
                                     <children>
                                         <VBox spacing="4.0" HBox.hgrow="ALWAYS">
                                             <children>
@@ -326,14 +297,11 @@
                                                 <Label text="Status: Upcoming | registration soon" textFill="#d3e2e7" />
                                             </children>
                                         </VBox>
-                                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="70.0"
-                                                style="-fx-background-color: #5f86a6; -fx-background-radius: 12;"
-                                                text="Open" textFill="WHITE" />
+                                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 12;" text="Open" textFill="WHITE" />
                                     </children>
                                 </HBox>
 
-                                <HBox alignment="CENTER_LEFT" spacing="14.0"
-                                      style="-fx-background-color: #1d4052; -fx-background-radius: 15; -fx-padding: 10;">
+                                <HBox alignment="CENTER_LEFT" spacing="14.0" style="-fx-background-color: #1d4052; -fx-background-radius: 15; -fx-padding: 10;">
                                     <children>
                                         <VBox spacing="4.0" HBox.hgrow="ALWAYS">
                                             <children>
@@ -344,14 +312,11 @@
                                                 <Label text="Status: Finished | winners announced" textFill="#d3e2e7" />
                                             </children>
                                         </VBox>
-                                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="70.0"
-                                                style="-fx-background-color: #5f86a6; -fx-background-radius: 12;"
-                                                text="Open" textFill="WHITE" />
+                                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 12;" text="Open" textFill="WHITE" />
                                     </children>
                                 </HBox>
 
-                                <HBox alignment="CENTER_LEFT" spacing="14.0"
-                                      style="-fx-background-color: #1d4052; -fx-background-radius: 15; -fx-padding: 10;">
+                                <HBox alignment="CENTER_LEFT" spacing="14.0" style="-fx-background-color: #1d4052; -fx-background-radius: 15; -fx-padding: 10;">
                                     <children>
                                         <VBox spacing="4.0" HBox.hgrow="ALWAYS">
                                             <children>
@@ -362,9 +327,7 @@
                                                 <Label text="Status: Finished | 6 tournaments" textFill="#d3e2e7" />
                                             </children>
                                         </VBox>
-                                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="70.0"
-                                                style="-fx-background-color: #5f86a6; -fx-background-radius: 12;"
-                                                text="Open" textFill="WHITE" />
+                                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 12;" text="Open" textFill="WHITE" />
                                     </children>
                                 </HBox>
                             </children>
