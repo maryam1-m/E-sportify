@@ -44,14 +44,11 @@
                                    fitWidth="16.0"
                                    pickOnBounds="true"
                                    preserveRatio="true">
-
                             <image>
                                 <Image url="@images/progress.png" />
                             </image>
-
                         </ImageView>
                     </graphic>
-
                 </Button>
 
                 <Button onAction="#goToPlayers" mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0"
@@ -181,7 +178,7 @@
                                     </font>
                                 </Label>
 
-                                <Label text="12" textFill="WHITE">
+                                <Label fx:id="availableGamesCountLabel" text="0" textFill="WHITE">
                                     <font>
                                         <Font name="ArtifaktElement-Heavy" size="28.0" />
                                     </font>
@@ -228,7 +225,6 @@
                               style="-fx-background-color: #2b537e; -fx-background-radius: 30;">
                             <children>
 
-                                <!-- هون بتحطي صورة اللعبة الرئيسية إذا بدك -->
                                 <ImageView fitHeight="95.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@images/game-controller.png" />
@@ -238,7 +234,7 @@
                                     </viewport>
                                 </ImageView>
 
-                                <Label text="Featured Game" textFill="WHITE">
+                                <Label fx:id="featuredGameSmallTitleLabel" text="Featured Game" textFill="WHITE">
                                     <font>
                                         <Font name="ArtifaktElement-Heavy" size="18.0" />
                                     </font>
@@ -254,13 +250,14 @@
                             </padding>
 
                             <children>
-                                <Label text="Valorant" textFill="WHITE">
+                                <Label fx:id="featuredGameTitleLabel" text="Game Name" textFill="WHITE">
                                     <font>
                                         <Font name="Century Schoolbook Bold" size="25.0" />
                                     </font>
                                 </Label>
 
-                                <Label text="A competitive team-based game where players join teams, play matches, and compete in tournaments."
+                                <Label fx:id="featuredGameDescriptionLabel"
+                                       text="Game details will appear here from the database."
                                        wrapText="true" textFill="#d3e2e7">
                                     <font>
                                         <Font name="Century" size="13.0" />
@@ -273,7 +270,7 @@
                                               style="-fx-background-color: #1d4052; -fx-background-radius: 18;">
                                             <children>
                                                 <Label text="Teams" textFill="#d3e2e7" />
-                                                <Label text="8" textFill="WHITE">
+                                                <Label fx:id="featuredTeamsCountLabel" text="0" textFill="WHITE">
                                                     <font>
                                                         <Font name="ArtifaktElement-Heavy" size="18.0" />
                                                     </font>
@@ -285,7 +282,7 @@
                                               style="-fx-background-color: #1d4052; -fx-background-radius: 18;">
                                             <children>
                                                 <Label text="Matches" textFill="#d3e2e7" />
-                                                <Label text="24" textFill="WHITE">
+                                                <Label fx:id="featuredMatchesCountLabel" text="0" textFill="WHITE">
                                                     <font>
                                                         <Font name="ArtifaktElement-Heavy" size="18.0" />
                                                     </font>
@@ -297,7 +294,7 @@
                                               style="-fx-background-color: #1d4052; -fx-background-radius: 18;">
                                             <children>
                                                 <Label text="Tournaments" textFill="#d3e2e7" />
-                                                <Label text="3" textFill="WHITE">
+                                                <Label fx:id="featuredTournamentsCountLabel" text="0" textFill="WHITE">
                                                     <font>
                                                         <Font name="ArtifaktElement-Heavy" size="18.0" />
                                                     </font>
@@ -327,7 +324,6 @@
                             <children>
                                 <VBox alignment="CENTER" prefHeight="90.0" prefWidth="180.0">
                                     <children>
-                                        <!-- هون بتحطي صورة اللعبة -->
                                         <ImageView fitHeight="75.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@images/game-controller.png" />
@@ -336,7 +332,7 @@
                                     </children>
                                 </VBox>
 
-                                <Label text="FIFA 25" textFill="WHITE">
+                                <Label fx:id="game1TitleLabel" text="Game 1" textFill="WHITE">
                                     <font>
                                         <Font name="ArtifaktElement-Heavy" size="19.0" />
                                     </font>
@@ -344,9 +340,9 @@
 
                                 <Line endX="155.0" opacity="0.35" stroke="#d3e2e7" />
 
-                                <Label text="Category: Sports" textFill="WHITE" />
-                                <Label text="Players: 2 - 22" textFill="WHITE" />
-                                <Label text="Active Teams: 6" textFill="WHITE" />
+                                <Label fx:id="game1CategoryLabel" text="Category: -" textFill="WHITE" />
+                                <Label fx:id="game1PriceLabel" text="Price: -" textFill="WHITE" />
+                                <Label fx:id="game1DeveloperLabel" text="Developer: -" textFill="WHITE" />
 
                                 <Button onAction="#viewGameDetails"
                                         mnemonicParsing="false"
@@ -371,7 +367,6 @@
                             <children>
                                 <VBox alignment="CENTER" prefHeight="90.0" prefWidth="180.0">
                                     <children>
-                                        <!-- هون بتحطي صورة اللعبة -->
                                         <ImageView fitHeight="75.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@images/game-controller.png" />
@@ -380,7 +375,7 @@
                                     </children>
                                 </VBox>
 
-                                <Label text="Valorant" textFill="WHITE">
+                                <Label fx:id="game2TitleLabel" text="Game 2" textFill="WHITE">
                                     <font>
                                         <Font name="ArtifaktElement-Heavy" size="19.0" />
                                     </font>
@@ -388,9 +383,9 @@
 
                                 <Line endX="155.0" opacity="0.35" stroke="#d3e2e7" />
 
-                                <Label text="Category: Shooter" textFill="WHITE" />
-                                <Label text="Players: 5 vs 5" textFill="WHITE" />
-                                <Label text="Active Teams: 8" textFill="WHITE" />
+                                <Label fx:id="game2CategoryLabel" text="Category: -" textFill="WHITE" />
+                                <Label fx:id="game2PriceLabel" text="Price: -" textFill="WHITE" />
+                                <Label fx:id="game2DeveloperLabel" text="Developer: -" textFill="WHITE" />
 
                                 <Button onAction="#viewGameDetails"
                                         mnemonicParsing="false"
@@ -415,7 +410,6 @@
                             <children>
                                 <VBox alignment="CENTER" prefHeight="90.0" prefWidth="180.0">
                                     <children>
-                                        <!-- هون بتحطي صورة اللعبة -->
                                         <ImageView fitHeight="75.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@images/game-controller.png" />
@@ -424,7 +418,7 @@
                                     </children>
                                 </VBox>
 
-                                <Label text="Rocket League" textFill="WHITE">
+                                <Label fx:id="game3TitleLabel" text="Game 3" textFill="WHITE">
                                     <font>
                                         <Font name="ArtifaktElement-Heavy" size="18.0" />
                                     </font>
@@ -432,9 +426,9 @@
 
                                 <Line endX="155.0" opacity="0.35" stroke="#d3e2e7" />
 
-                                <Label text="Category: Racing" textFill="WHITE" />
-                                <Label text="Players: 3 vs 3" textFill="WHITE" />
-                                <Label text="Active Teams: 5" textFill="WHITE" />
+                                <Label fx:id="game3CategoryLabel" text="Category: -" textFill="WHITE" />
+                                <Label fx:id="game3PriceLabel" text="Price: -" textFill="WHITE" />
+                                <Label fx:id="game3DeveloperLabel" text="Developer: -" textFill="WHITE" />
 
                                 <Button onAction="#viewGameDetails"
                                         mnemonicParsing="false"

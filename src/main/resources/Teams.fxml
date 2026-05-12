@@ -13,12 +13,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:controller="org.example.controller.TeamMemberController"
-            maxHeight="-Infinity" maxWidth="-Infinity"
-            minHeight="-Infinity" minWidth="-Infinity"
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="650.0" prefWidth="900.0"
             xmlns="http://javafx.com/javafx/25"
-            xmlns:fx="http://javafx.com/fxml/1">
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.controller.TeamMemberController">
 
     <!-- ================= LEFT SIDEBAR ================= -->
     <left>
@@ -31,8 +30,7 @@
                     </font>
                 </Label>
 
-                <Button onAction="#goToDashboard" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0"
-                        style="-fx-background-color: #02182e;" text="     Dashboard" textFill="WHITE">
+                <Button mnemonicParsing="false" onAction="#goToDashboard" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: #02182e;" text="     Dashboard" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="22.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -42,8 +40,7 @@
                     </graphic>
                 </Button>
 
-                <Button onAction="#goToPlayers" mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0"
-                        style="-fx-background-color: #02182e;" text="        Players" textFill="WHITE">
+                <Button mnemonicParsing="false" onAction="#goToPlayers" prefHeight="26.0" prefWidth="107.0" style="-fx-background-color: #02182e;" text="        Players" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="17.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -54,9 +51,7 @@
                 </Button>
 
                 <!-- Current Page -->
-                <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="118.0"
-                        style="-fx-background-color: #0b345c; -fx-background-radius: 12;"
-                        text="      Teams" textFill="WHITE">
+                <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="118.0" style="-fx-background-color: #0b345c; -fx-background-radius: 12;" text="      Teams" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -66,8 +61,7 @@
                     </graphic>
                 </Button>
 
-                <Button onAction="#goToTournaments" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0"
-                        style="-fx-background-color: #02182e;" text="     Tournments " textFill="WHITE">
+                <Button mnemonicParsing="false" onAction="#goToTournaments" prefHeight="26.0" prefWidth="132.0" style="-fx-background-color: #02182e;" text="     Tournments " textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="21.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -77,8 +71,7 @@
                     </graphic>
                 </Button>
 
-                <Button onAction="#goToMatches" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0"
-                        style="-fx-background-color: #02182e;" text="    Matches" textFill="WHITE">
+                <Button mnemonicParsing="false" onAction="#goToMatches" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #02182e;" text="    Matches" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -88,8 +81,7 @@
                     </graphic>
                 </Button>
 
-                <Button onAction="#goToGames" mnemonicParsing="false" prefHeight="30.0" prefWidth="101.0"
-                        style="-fx-background-color: #02182e;" text="    Games" textFill="WHITE">
+                <Button mnemonicParsing="false" onAction="#goToGames" prefHeight="30.0" prefWidth="101.0" style="-fx-background-color: #02182e;" text="    Games" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="32.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -99,8 +91,7 @@
                     </graphic>
                 </Button>
 
-                <Button onAction="#goToSeasons" mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0"
-                        style="-fx-background-color: #02182e;" text="     Seasons" textFill="WHITE">
+                <Button mnemonicParsing="false" onAction="#goToSeasons" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: #02182e;" text="     Seasons" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="32.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -110,8 +101,7 @@
                     </graphic>
                 </Button>
 
-                <Button onAction="#logout" mnemonicParsing="false" prefHeight="30.0" prefWidth="111.0"
-                        style="-fx-background-color: #02182e;" text="      LogOut" textFill="WHITE">
+                <Button mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: #02182e;" text="      LogOut" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="19.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -131,10 +121,9 @@
 
     <!-- ================= CENTER CONTENT ================= -->
     <center>
-        <VBox prefHeight="650.0" prefWidth="740.0" spacing="17.0"
-              style="-fx-background-color: #02182e;">
+        <VBox prefHeight="650.0" prefWidth="740.0" spacing="17.0" style="-fx-background-color: #02182e;">
             <padding>
-                <Insets top="24.0" right="30.0" bottom="24.0" left="30.0" />
+                <Insets bottom="24.0" left="30.0" right="30.0" top="24.0" />
             </padding>
 
             <children>
@@ -151,8 +140,7 @@
                                     </font>
                                 </Label>
 
-                                <Label text="Manage players inside each team and view their roles, games, and performance."
-                                       textFill="#8197ac" wrapText="true">
+                                <Label text="Manage players inside each team and view their roles, games, and performance." textFill="#8197ac" wrapText="true">
                                     <font>
                                         <Font name="Century" size="13.0" />
                                     </font>
@@ -160,8 +148,7 @@
                             </children>
                         </VBox>
 
-                        <VBox alignment="CENTER" prefHeight="75.0" prefWidth="210.0"
-                              style="-fx-background-color: #022c50; -fx-background-radius: 25;">
+                        <VBox alignment="CENTER" prefHeight="75.0" prefWidth="210.0" style="-fx-background-color: #022c50; -fx-background-radius: 25;">
                             <children>
                                 <Label text="Total Members" textFill="#d3e2e7">
                                     <font>
@@ -169,7 +156,7 @@
                                     </font>
                                 </Label>
 
-                                <Label text="42" textFill="WHITE">
+                                <Label fx:id="totalMembersLabel" text="0" textFill="WHITE">
                                     <font>
                                         <Font name="ArtifaktElement-Heavy" size="28.0" />
                                     </font>
@@ -184,36 +171,11 @@
                 <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="680.0" spacing="15.0">
                     <children>
 
-                        <TextField fx:id="searchMemberField"
-                                   prefHeight="38.0" prefWidth="430.0"
-                                   promptText="Search team member..."
-                                   style="-fx-background-color: #d3e2e7;
-                                          -fx-background-radius: 20;
-                                          -fx-text-fill: #02182e;
-                                          -fx-prompt-text-fill: #5f86a6;
-                                          -fx-padding: 0 15 0 15;" />
+                        <TextField fx:id="searchMemberField" prefHeight="38.0" prefWidth="430.0" promptText="Search team member..." style="-fx-background-color: #d3e2e7;                                           -fx-background-radius: 20;                                           -fx-text-fill: #02182e;                                           -fx-prompt-text-fill: #5f86a6;                                           -fx-padding: 0 15 0 15;" />
 
-                        <Button onAction="#searchMember"
-                                mnemonicParsing="false"
-                                prefHeight="38.0" prefWidth="105.0"
-                                text="Search"
-                                textFill="WHITE"
-                                style="-fx-background-color: #2b537e;
-                                       -fx-background-radius: 20;">
+                        <Button mnemonicParsing="false" onAction="#searchMember" prefHeight="38.0" prefWidth="105.0" style="-fx-background-color: #2b537e;                                        -fx-background-radius: 20;" text="Search" textFill="WHITE">
                             <font>
                                 <Font name="ArtifaktElement-Heavy" size="14.0" />
-                            </font>
-                        </Button>
-
-                        <Button onAction="#addTeamMember"
-                                mnemonicParsing="false"
-                                prefHeight="38.0" prefWidth="120.0"
-                                text="+ Add Member"
-                                textFill="WHITE"
-                                style="-fx-background-color: #5f86a6;
-                                       -fx-background-radius: 20;">
-                            <font>
-                                <Font name="ArtifaktElement-Heavy" size="13.0" />
                             </font>
                         </Button>
 
@@ -225,11 +187,9 @@
                     <children>
 
                         <!-- Team Card -->
-                        <VBox alignment="CENTER" prefHeight="170.0" prefWidth="230.0"
-                              style="-fx-background-color: #2b537e; -fx-background-radius: 30;">
+                        <VBox alignment="CENTER" prefHeight="170.0" prefWidth="230.0" style="-fx-background-color: #2b537e; -fx-background-radius: 30;">
                             <children>
 
-                                <!-- هون بتحطي صورة الفريق أو صورة اللاعب -->
                                 <ImageView fitHeight="90.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@images/team.png" />
@@ -239,7 +199,7 @@
                                     </viewport>
                                 </ImageView>
 
-                                <Label text="Nexus Squad" textFill="WHITE">
+                                <Label fx:id="selectedTeamLabel" text="Team Name" textFill="WHITE">
                                     <font>
                                         <Font name="ArtifaktElement-Heavy" size="19.0" />
                                     </font>
@@ -255,10 +215,9 @@
                         </VBox>
 
                         <!-- Selected Member Details -->
-                        <VBox prefHeight="170.0" prefWidth="430.0" spacing="9.0"
-                              style="-fx-background-color: #022c50; -fx-background-radius: 30;">
+                        <VBox prefHeight="170.0" prefWidth="430.0" spacing="9.0" style="-fx-background-color: #022c50; -fx-background-radius: 30;">
                             <padding>
-                                <Insets top="18.0" right="20.0" bottom="18.0" left="20.0" />
+                                <Insets bottom="18.0" left="20.0" right="20.0" top="18.0" />
                             </padding>
 
                             <children>
@@ -273,13 +232,13 @@
 
                                 <HBox spacing="25.0">
                                     <children>
-                                        <Label text="Name: Maryam Abdoh" textFill="#d3e2e7">
+                                        <Label fx:id="selectedMemberNameLabel" text="Name: -" textFill="#d3e2e7">
                                             <font>
                                                 <Font name="Century" size="13.0" />
                                             </font>
                                         </Label>
 
-                                        <Label text="Role: Captain" textFill="#d3e2e7">
+                                        <Label fx:id="selectedMemberRoleLabel" text="Role: -" textFill="#d3e2e7">
                                             <font>
                                                 <Font name="Century" size="13.0" />
                                             </font>
@@ -289,13 +248,13 @@
 
                                 <HBox spacing="25.0">
                                     <children>
-                                        <Label text="Game: Valorant" textFill="#d3e2e7">
+                                        <Label fx:id="selectedMemberGameLabel" text="Game: -" textFill="#d3e2e7">
                                             <font>
                                                 <Font name="Century" size="13.0" />
                                             </font>
                                         </Label>
 
-                                        <Label text="Status: Active" textFill="#d3e2e7">
+                                        <Label fx:id="selectedMemberStatusLabel" text="Status: -" textFill="#d3e2e7">
                                             <font>
                                                 <Font name="Century" size="13.0" />
                                             </font>
@@ -306,11 +265,10 @@
                                 <HBox spacing="15.0">
                                     <children>
 
-                                        <VBox alignment="CENTER" prefHeight="50.0" prefWidth="105.0"
-                                              style="-fx-background-color: #1d4052; -fx-background-radius: 16;">
+                                        <VBox alignment="CENTER" prefHeight="50.0" prefWidth="105.0" style="-fx-background-color: #1d4052; -fx-background-radius: 16;">
                                             <children>
                                                 <Label text="Matches" textFill="#d3e2e7" />
-                                                <Label text="18" textFill="WHITE">
+                                                <Label fx:id="selectedMemberMatchesLabel" text="0" textFill="WHITE">
                                                     <font>
                                                         <Font name="ArtifaktElement-Heavy" size="18.0" />
                                                     </font>
@@ -318,11 +276,10 @@
                                             </children>
                                         </VBox>
 
-                                        <VBox alignment="CENTER" prefHeight="50.0" prefWidth="105.0"
-                                              style="-fx-background-color: #1d4052; -fx-background-radius: 16;">
+                                        <VBox alignment="CENTER" prefHeight="50.0" prefWidth="105.0" style="-fx-background-color: #1d4052; -fx-background-radius: 16;">
                                             <children>
                                                 <Label text="Wins" textFill="#d3e2e7" />
-                                                <Label text="12" textFill="WHITE">
+                                                <Label fx:id="selectedMemberWinsLabel" text="0" textFill="WHITE">
                                                     <font>
                                                         <Font name="ArtifaktElement-Heavy" size="18.0" />
                                                     </font>
@@ -330,11 +287,10 @@
                                             </children>
                                         </VBox>
 
-                                        <VBox alignment="CENTER" prefHeight="50.0" prefWidth="105.0"
-                                              style="-fx-background-color: #1d4052; -fx-background-radius: 16;">
+                                        <VBox alignment="CENTER" prefHeight="50.0" prefWidth="105.0" style="-fx-background-color: #1d4052; -fx-background-radius: 16;">
                                             <children>
                                                 <Label text="Rating" textFill="#d3e2e7" />
-                                                <Label text="4.8" textFill="WHITE">
+                                                <Label fx:id="selectedMemberRatingLabel" text="0.0" textFill="WHITE">
                                                     <font>
                                                         <Font name="ArtifaktElement-Heavy" size="18.0" />
                                                     </font>
@@ -352,10 +308,9 @@
                 </HBox>
 
                 <!-- Members List -->
-                <VBox prefHeight="280.0" prefWidth="680.0" spacing="8.0"
-                      style="-fx-background-color: #022c50; -fx-background-radius: 25;">
+                <VBox prefHeight="280.0" prefWidth="680.0" spacing="8.0" style="-fx-background-color: #022c50; -fx-background-radius: 25;">
                     <padding>
-                        <Insets top="15.0" right="18.0" bottom="15.0" left="18.0" />
+                        <Insets bottom="15.0" left="18.0" right="18.0" top="15.0" />
                     </padding>
 
                     <children>
@@ -405,18 +360,13 @@
                         <!-- Row 1 -->
                         <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="640.0">
                             <children>
-                                <Label prefWidth="150.0" text="Maryam Abdoh" textFill="#d3e2e7" />
-                                <Label prefWidth="120.0" text="Nexus Squad" textFill="#d3e2e7" />
-                                <Label prefWidth="120.0" text="Valorant" textFill="#d3e2e7" />
-                                <Label prefWidth="95.0" text="Captain" textFill="#d3e2e7" />
-                                <Label prefWidth="80.0" text="Active" textFill="#d3e2e7" />
+                                <Label fx:id="member1NameLabel" prefWidth="150.0" text="-" textFill="#d3e2e7" />
+                                <Label fx:id="member1TeamLabel" prefWidth="120.0" text="-" textFill="#d3e2e7" />
+                                <Label fx:id="member1GameLabel" prefWidth="120.0" text="-" textFill="#d3e2e7" />
+                                <Label fx:id="member1RoleLabel" prefWidth="95.0" text="-" textFill="#d3e2e7" />
+                                <Label fx:id="member1StatusLabel" prefWidth="80.0" text="-" textFill="#d3e2e7" />
 
-                                <Button onAction="#viewMemberDetails"
-                                        mnemonicParsing="false"
-                                        prefHeight="26.0" prefWidth="70.0"
-                                        text="View"
-                                        textFill="WHITE"
-                                        style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" />
+                                <Button mnemonicParsing="false" onAction="#viewMemberDetails" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" text="View" textFill="WHITE" />
                             </children>
                         </HBox>
 
@@ -425,18 +375,13 @@
                         <!-- Row 2 -->
                         <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="640.0">
                             <children>
-                                <Label prefWidth="150.0" text="Ahmad Ali" textFill="#d3e2e7" />
-                                <Label prefWidth="120.0" text="Nexus Squad" textFill="#d3e2e7" />
-                                <Label prefWidth="120.0" text="Valorant" textFill="#d3e2e7" />
-                                <Label prefWidth="95.0" text="Player" textFill="#d3e2e7" />
-                                <Label prefWidth="80.0" text="Active" textFill="#d3e2e7" />
+                                <Label fx:id="member2NameLabel" prefWidth="150.0" text="-" textFill="#d3e2e7" />
+                                <Label fx:id="member2TeamLabel" prefWidth="120.0" text="-" textFill="#d3e2e7" />
+                                <Label fx:id="member2GameLabel" prefWidth="120.0" text="-" textFill="#d3e2e7" />
+                                <Label fx:id="member2RoleLabel" prefWidth="95.0" text="-" textFill="#d3e2e7" />
+                                <Label fx:id="member2StatusLabel" prefWidth="80.0" text="-" textFill="#d3e2e7" />
 
-                                <Button onAction="#viewMemberDetails"
-                                        mnemonicParsing="false"
-                                        prefHeight="26.0" prefWidth="70.0"
-                                        text="View"
-                                        textFill="WHITE"
-                                        style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" />
+                                <Button mnemonicParsing="false" onAction="#viewMemberDetails" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" text="View" textFill="WHITE" />
                             </children>
                         </HBox>
 
@@ -445,18 +390,13 @@
                         <!-- Row 3 -->
                         <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="640.0">
                             <children>
-                                <Label prefWidth="150.0" text="Yamen Marie" textFill="#d3e2e7" />
-                                <Label prefWidth="120.0" text="Iron Brokers" textFill="#d3e2e7" />
-                                <Label prefWidth="120.0" text="FIFA 25" textFill="#d3e2e7" />
-                                <Label prefWidth="95.0" text="Player" textFill="#d3e2e7" />
-                                <Label prefWidth="80.0" text="Active" textFill="#d3e2e7" />
+                                <Label fx:id="member3NameLabel" prefWidth="150.0" text="-" textFill="#d3e2e7" />
+                                <Label fx:id="member3TeamLabel" prefWidth="120.0" text="-" textFill="#d3e2e7" />
+                                <Label fx:id="member3GameLabel" prefWidth="120.0" text="-" textFill="#d3e2e7" />
+                                <Label fx:id="member3RoleLabel" prefWidth="95.0" text="-" textFill="#d3e2e7" />
+                                <Label fx:id="member3StatusLabel" prefWidth="80.0" text="-" textFill="#d3e2e7" />
 
-                                <Button onAction="#viewMemberDetails"
-                                        mnemonicParsing="false"
-                                        prefHeight="26.0" prefWidth="70.0"
-                                        text="View"
-                                        textFill="WHITE"
-                                        style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" />
+                                <Button mnemonicParsing="false" onAction="#viewMemberDetails" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" text="View" textFill="WHITE" />
                             </children>
                         </HBox>
 
@@ -465,18 +405,13 @@
                         <!-- Row 4 -->
                         <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="640.0">
                             <children>
-                                <Label prefWidth="150.0" text="Jana Salahat" textFill="#d3e2e7" />
-                                <Label prefWidth="120.0" text="The Titans" textFill="#d3e2e7" />
-                                <Label prefWidth="120.0" text="Rocket League" textFill="#d3e2e7" />
-                                <Label prefWidth="95.0" text="Substitute" textFill="#d3e2e7" />
-                                <Label prefWidth="80.0" text="Pending" textFill="#d3e2e7" />
+                                <Label fx:id="member4NameLabel" prefWidth="150.0" text="-" textFill="#d3e2e7" />
+                                <Label fx:id="member4TeamLabel" prefWidth="120.0" text="-" textFill="#d3e2e7" />
+                                <Label fx:id="member4GameLabel" prefWidth="120.0" text="-" textFill="#d3e2e7" />
+                                <Label fx:id="member4RoleLabel" prefWidth="95.0" text="-" textFill="#d3e2e7" />
+                                <Label fx:id="member4StatusLabel" prefWidth="80.0" text="-" textFill="#d3e2e7" />
 
-                                <Button onAction="#viewMemberDetails"
-                                        mnemonicParsing="false"
-                                        prefHeight="26.0" prefWidth="70.0"
-                                        text="View"
-                                        textFill="WHITE"
-                                        style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" />
+                                <Button mnemonicParsing="false" onAction="#viewMemberDetails" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" text="View" textFill="WHITE" />
                             </children>
                         </HBox>
 

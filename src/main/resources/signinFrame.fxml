@@ -25,7 +25,6 @@
             xmlns:fx="http://javafx.com/fxml/1">
 
     <content>
-
         <AnchorPane minHeight="0.0"
                     minWidth="0.0"
                     prefHeight="180.0"
@@ -36,11 +35,9 @@
                 <ImageView fitHeight="374.0"
                            fitWidth="600.0"
                            pickOnBounds="true">
-
                     <image>
                         <Image url="@images/signin.jpeg"/>
                     </image>
-
                 </ImageView>
 
                 <Rectangle arcHeight="30.0"
@@ -62,36 +59,21 @@
                        text="SIGN IN"
                        textAlignment="CENTER"
                        textFill="#47bfad">
-
                     <font>
                         <Font name="Century Schoolbook Bold" size="31.0" />
                     </font>
-
                 </Label>
 
-                <TextField layoutX="372.0"
-                           layoutY="143.0"
-                           prefHeight="26.0"
-                           prefWidth="197.0"
-                           promptText="Email" />
-
-                <PasswordField layoutX="371.0"
-                               layoutY="192.0"
-                               prefHeight="26.0"
-                               prefWidth="198.0"
-                               promptText="Password" />
-
-                <CheckBox layoutX="366.0"
-                          layoutY="230.0"
-                          mnemonicParsing="false"
-                          text="Show Password"
-                          textFill="#04394d">
-
+                <Label layoutX="324.0"
+                       layoutY="97.0"
+                       prefHeight="18.0"
+                       prefWidth="256.0"
+                       text="Welcome to E-Sportify, Sign in to access your Account"
+                       textFill="#05394deb">
                     <font>
-                        <Font name="Arial" size="10.0" />
+                        <Font name="Century" size="10.0" />
                     </font>
-
-                </CheckBox>
+                </Label>
 
                 <Label layoutX="372.0"
                        layoutY="126.0"
@@ -99,55 +81,65 @@
                        prefWidth="35.0"
                        text="Email"
                        textFill="#04394d">
-
                     <font>
                         <Font name="Arial" size="10.0" />
                     </font>
-
                 </Label>
+
+                <TextField fx:id="emailField"
+                           layoutX="372.0"
+                           layoutY="143.0"
+                           prefHeight="26.0"
+                           prefWidth="197.0"
+                           promptText="Email" />
 
                 <Label layoutX="370.0"
                        layoutY="179.0"
                        text="Password"
                        textFill="#04394d">
-
                     <font>
                         <Font name="Arial" size="10.0" />
                     </font>
-
                 </Label>
 
-                <Label layoutX="434.0"
-                       layoutY="116.0" />
+                <PasswordField fx:id="passwordField"
+                               layoutX="371.0"
+                               layoutY="192.0"
+                               prefHeight="26.0"
+                               prefWidth="198.0"
+                               promptText="Password" />
 
-                <!-- LOGIN BUTTON -->
-                <Button layoutX="469.0"
-                        layoutY="269.0"
-                        mnemonicParsing="false"
-                        onAction="#handleLogin"
-                        prefHeight="27.0"
-                        prefWidth="98.0"
-                        style="-fx-background-radius: 20; -fx-background-color: #0c7075;"
-                        text="    log In"
-                        textFill="WHITE">
+                <TextField fx:id="visiblePasswordField"
+                           layoutX="371.0"
+                           layoutY="192.0"
+                           prefHeight="26.0"
+                           prefWidth="198.0"
+                           promptText="Password"
+                           visible="false"
+                           managed="false" />
 
+                <CheckBox fx:id="showPasswordCheckBox"
+                          layoutX="366.0"
+                          layoutY="230.0"
+                          mnemonicParsing="false"
+                          onAction="#togglePasswordVisibility"
+                          text="Show Password"
+                          textFill="#04394d">
                     <font>
-                        <Font name="Artifakt Element Heavy Italic" size="14.0" />
+                        <Font name="Arial" size="10.0" />
                     </font>
+                </CheckBox>
 
-                </Button>
-
-                <Label layoutX="324.0"
-                       layoutY="97.0"
-                       prefHeight="18.0"
-                       prefWidth="256.0"
-                       text="Welcome to E-Sportify,Sign in to access your Account"
-                       textFill="#05394deb">
-
+                <Label layoutX="493.0"
+                       layoutY="230.0"
+                       prefHeight="15.0"
+                       prefWidth="75.0"
+                       text="Forget password"
+                       textFill="#04394d"
+                       underline="true">
                     <font>
-                        <Font name="Century" size="10.0" />
+                        <Font name="Arial" size="10.0" />
                     </font>
-
                 </Label>
 
                 <!-- BACK BUTTON -->
@@ -160,30 +152,25 @@
                         style="-fx-background-radius: 20; -fx-background-color: #0c7075;"
                         text="       Back"
                         textFill="WHITE">
-
                     <font>
                         <Font name="ArtifaktElement-Heavy" size="14.0" />
                     </font>
-
                 </Button>
 
-                <Label layoutX="493.0"
-                       layoutY="230.0"
-                       prefHeight="15.0"
-                       prefWidth="75.0"
-                       text="Forget password"
-                       textFill="#04394d"
-                       underline="true">
-
+                <!-- LOGIN BUTTON -->
+                <Button layoutX="469.0"
+                        layoutY="269.0"
+                        mnemonicParsing="false"
+                        onAction="#handleLogin"
+                        prefHeight="27.0"
+                        prefWidth="98.0"
+                        style="-fx-background-radius: 20; -fx-background-color: #0c7075;"
+                        text="    log In"
+                        textFill="WHITE">
                     <font>
-                        <Font name="Arial" size="10.0" />
+                        <Font name="Artifakt Element Heavy Italic" size="14.0" />
                     </font>
-
-                </Label>
-
-                <TextField layoutX="389.0"
-                           layoutY="193.0"
-                           visible="false" />
+                </Button>
 
                 <ImageView fitHeight="17.0"
                            fitWidth="18.0"
@@ -191,11 +178,9 @@
                            layoutY="148.0"
                            pickOnBounds="true"
                            preserveRatio="true">
-
                     <image>
                         <Image url="@images/read.png" />
                     </image>
-
                 </ImageView>
 
                 <ImageView fitHeight="18.0"
@@ -204,11 +189,9 @@
                            layoutY="198.0"
                            pickOnBounds="true"
                            preserveRatio="true">
-
                     <image>
                         <Image url="@images/locked-computer.png" />
                     </image>
-
                 </ImageView>
 
                 <ImageView fitHeight="24.0"
@@ -217,11 +200,9 @@
                            layoutY="274.0"
                            pickOnBounds="true"
                            preserveRatio="true">
-
                     <image>
                         <Image url="@images/back.png" />
                     </image>
-
                 </ImageView>
 
                 <ImageView fitHeight="24.0"
@@ -230,17 +211,12 @@
                            layoutY="273.0"
                            pickOnBounds="true"
                            preserveRatio="true">
-
                     <image>
                         <Image url="@images/log-out.png" />
                     </image>
-
                 </ImageView>
 
             </children>
-
         </AnchorPane>
-
     </content>
-
 </TitledPane>

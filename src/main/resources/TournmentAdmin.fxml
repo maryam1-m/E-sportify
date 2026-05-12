@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:controller="org.example.controller.AdminTournamentsController"
+            prefHeight="650.0" prefWidth="900.0"
+            maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+    <left>
+        <VBox prefWidth="165.0" spacing="20.0" style="-fx-background-color: #02182e;" BorderPane.alignment="CENTER">
+            <children>
+                <Label prefHeight="41.0" prefWidth="130.0" text=" E-Sportify" textFill="#d3e2e7">
+                    <font><Font name="Century Schoolbook Bold" size="16.0"/></font>
+                </Label>
+
+                <Button onAction="#goToDashboard" prefHeight="30.0" prefWidth="132.0"
+                        style="-fx-background-color: #02182e;" text=" Dashboard" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="16.0" preserveRatio="true">
+                            <image><Image url="@images/progress.png"/></image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#goToPlayers" prefHeight="30.0" prefWidth="132.0"
+                        style="-fx-background-color: #02182e;" text=" Players" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="25.0" preserveRatio="true">
+                            <image><Image url="@images/soccer-player.png"/></image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#goToTeams" prefHeight="30.0" prefWidth="132.0"
+                        style="-fx-background-color: #02182e;" text=" Teams" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="25.0" preserveRatio="true">
+                            <image><Image url="@images/team.png"/></image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button prefHeight="34.0" prefWidth="140.0"
+                        style="-fx-background-color: #0b345c; -fx-background-radius: 14;"
+                        text=" Tournaments" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="21.0" fitWidth="27.0" preserveRatio="true">
+                            <image><Image url="@images/team-building.png"/></image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#goToMatches" prefHeight="30.0" prefWidth="132.0"
+                        style="-fx-background-color: #02182e;" text=" Matches" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" preserveRatio="true">
+                            <image><Image url="@images/match (1).png"/></image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#goToGames" prefHeight="30.0" prefWidth="132.0"
+                        style="-fx-background-color: #02182e;" text=" Games" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="28.0" preserveRatio="true">
+                            <image><Image url="@images/game-controller.png"/></image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button onAction="#goToSeasons" prefHeight="30.0" prefWidth="132.0"
+                        style="-fx-background-color: #02182e;" text=" Seasons" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="22.0" preserveRatio="true">
+                            <image><Image url="@images/calendar.png"/></image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Pane VBox.vgrow="ALWAYS"/>
+
+                <Button onAction="#logout" prefHeight="30.0" prefWidth="132.0"
+                        style="-fx-background-color: #02182e;" text=" LogOut" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="19.0" fitWidth="25.0" preserveRatio="true">
+                            <image><Image url="@images/logout.png"/></image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+            <padding>
+                <Insets top="18.0" left="20.0" right="5.0" bottom="18.0"/>
+            </padding>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="14.0" style="-fx-background-color: #02182e;">
+            <padding>
+                <Insets top="20.0" right="22.0" bottom="20.0" left="24.0"/>
+            </padding>
+
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" prefHeight="82.0" prefWidth="688.0" spacing="16.0"
+                  style="-fx-background-color: #022c50; -fx-background-radius: 24; -fx-padding: 13 18;">
+                <VBox spacing="2.0" HBox.hgrow="ALWAYS">
+                    <Label text="Tournaments" textFill="#d3e2e7">
+                        <font><Font name="Segoe UI Bold" size="31.0"/></font>
+                    </Label>
+                    <Label text="Add, edit, delete, and manage tournament records" textFill="#a9bdc7">
+                        <font><Font name="Segoe UI" size="13.0"/></font>
+                    </Label>
+                </VBox>
+
+                <TextField fx:id="searchField" prefHeight="34.0" prefWidth="170.0"
+                           promptText="Search..."
+                           style="-fx-background-color: #d3e2e7; -fx-background-radius: 17; -fx-padding: 0 14;"/>
+                <Button onAction="#searchTournament" prefHeight="34.0" prefWidth="74.0"
+                        text="Search" textFill="WHITE"
+                        style="-fx-background-color: #5f86a6; -fx-background-radius: 17;"/>
+            </HBox>
+
+            <!-- Form -->
+            <VBox spacing="12.0" prefWidth="688.0"
+                  style="-fx-background-color: #022c50; -fx-background-radius: 24; -fx-padding: 18 20;">
+                <HBox alignment="CENTER_LEFT">
+                    <Label text="▣  Tournament Information" textFill="WHITE">
+                        <font><Font name="Segoe UI Bold" size="22.0"/></font>
+                    </Label>
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <Label text="Database fields" textFill="#8ea7b5">
+                        <font><Font name="Segoe UI" size="12.0"/></font>
+                    </Label>
+                </HBox>
+
+                <HBox spacing="10.0">
+                    <TextField fx:id="tournamentNameField" prefHeight="34.0" prefWidth="245.0"
+                               promptText="Tournament Name"
+                               style="-fx-background-color: #d3e2e7; -fx-background-radius: 17; -fx-padding: 0 14;"/>
+                    <TextField fx:id="gameIdField" prefHeight="34.0" prefWidth="125.0"
+                               promptText="Game ID"
+                               style="-fx-background-color: #d3e2e7; -fx-background-radius: 17; -fx-padding: 0 14;"/>
+                    <TextField fx:id="seasonIdField" prefHeight="34.0" prefWidth="125.0"
+                               promptText="Season ID"
+                               style="-fx-background-color: #d3e2e7; -fx-background-radius: 17; -fx-padding: 0 14;"/>
+                    <TextField fx:id="adminIdField" prefHeight="34.0" prefWidth="120.0"
+                               promptText="Admin ID"
+                               style="-fx-background-color: #d3e2e7; -fx-background-radius: 17; -fx-padding: 0 14;"/>
+                </HBox>
+
+                <HBox spacing="10.0">
+                    <DatePicker fx:id="startDatePicker" prefHeight="34.0" prefWidth="145.0"
+                                promptText="Start Date"
+                                style="-fx-background-radius: 17;"/>
+                    <DatePicker fx:id="endDatePicker" prefHeight="34.0" prefWidth="145.0"
+                                promptText="End Date"
+                                style="-fx-background-radius: 17;"/>
+                    <TextField fx:id="prizePoolField" prefHeight="34.0" prefWidth="150.0"
+                               promptText="Prize Pool"
+                               style="-fx-background-color: #d3e2e7; -fx-background-radius: 17; -fx-padding: 0 14;"/>
+                </HBox>
+
+                <HBox spacing="14.0">
+                    <Button onAction="#addTournament" prefHeight="34.0" prefWidth="118.0"
+                            text="Add" textFill="WHITE"
+                            style="-fx-background-color: #2b537e; -fx-background-radius: 17;"/>
+                    <Button onAction="#updateTournament" prefHeight="34.0" prefWidth="118.0"
+                            text="Update" textFill="WHITE"
+                            style="-fx-background-color: #5f86a6; -fx-background-radius: 17;"/>
+                    <Button onAction="#deleteTournament" prefHeight="34.0" prefWidth="118.0"
+                            text="Delete" textFill="WHITE"
+                            style="-fx-background-color: #8b2f3c; -fx-background-radius: 17;"/>
+                    <Button onAction="#clearFields" prefHeight="34.0" prefWidth="118.0"
+                            text="Clear" textFill="WHITE"
+                            style="-fx-background-color: #1d4052; -fx-background-radius: 17;"/>
+                </HBox>
+            </VBox>
+
+            <!-- Table -->
+            <VBox spacing="10.0" prefWidth="688.0" VBox.vgrow="ALWAYS"
+                  style="-fx-background-color: #022c50; -fx-background-radius: 24; -fx-padding: 18 20;">
+                <HBox alignment="CENTER_LEFT">
+                    <Label text="Tournament Records" textFill="WHITE">
+                        <font><Font name="Segoe UI Bold" size="22.0"/></font>
+                    </Label>
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <Button onAction="#refreshTable" prefHeight="32.0" prefWidth="86.0"
+                            text="Refresh" textFill="WHITE"
+                            style="-fx-background-color: #8197ac; -fx-background-radius: 16;"/>
+                </HBox>
+
+                <TableView fx:id="matchesTable" prefHeight="216.0" prefWidth="648.0"
+                           style="-fx-background-color: #d3e2e7; -fx-background-radius: 16;">
+                    <columns>
+                        <TableColumn fx:id="matchIdColumn" prefWidth="45.0" text="ID"/>
+                        <TableColumn fx:id="tournamentColumn" prefWidth="130.0" text="Tournament"/>
+                        <TableColumn fx:id="dateColumn" prefWidth="100.0" text="Date"/>
+                        <TableColumn fx:id="teamOneColumn" prefWidth="120.0" text="Team 1"/>
+                        <TableColumn fx:id="teamTwoColumn" prefWidth="120.0" text="Team 2"/>
+                        <TableColumn fx:id="resultColumn" prefWidth="110.0" text="Result"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

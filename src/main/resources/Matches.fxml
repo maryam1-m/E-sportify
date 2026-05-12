@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:controller="org.example.controller.DashboardController"
+<BorderPane fx:controller="org.example.controller.MatchesController"
             maxHeight="-Infinity" maxWidth="-Infinity"
             minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="650.0" prefWidth="900.0"
@@ -29,7 +29,7 @@
                     <font><Font name="Century Schoolbook Bold" size="16.0" /></font>
                 </Label>
 
-                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0"
+                <Button onAction="#goToDashboard" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0"
                         style="-fx-background-color: #02182e;" text="     Dashboard" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="22.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
@@ -136,7 +136,7 @@
                                 <Line endX="178.0" opacity="0.70" stroke="#d3e2e7" />
                                 <HBox alignment="CENTER_LEFT" spacing="16.0">
                                     <children>
-                                        <Label text="32" textFill="WHITE">
+                                        <Label fx:id="totalMatchesCountLabel" text="0" textFill="WHITE">
                                             <font><Font name="ArtifaktElement-Heavy" size="32.0" /></font>
                                         </Label>
                                         <ImageView fitHeight="34.0" fitWidth="34.0" preserveRatio="true">
@@ -157,7 +157,7 @@
                                 <Line endX="178.0" opacity="0.70" stroke="#d3e2e7" />
                                 <HBox alignment="CENTER_LEFT" spacing="16.0">
                                     <children>
-                                        <Label text="14" textFill="WHITE">
+                                        <Label fx:id="upcomingMatchesCountLabel" text="0" textFill="WHITE">
                                             <font><Font name="ArtifaktElement-Heavy" size="32.0" /></font>
                                         </Label>
                                         <ImageView fitHeight="34.0" fitWidth="34.0" preserveRatio="true">
@@ -172,13 +172,13 @@
                               style="-fx-background-color: #8197ac; -fx-background-radius: 24;">
                             <padding><Insets top="13.0" right="16.0" bottom="12.0" left="16.0" /></padding>
                             <children>
-                                <Label text="Live Now" textFill="WHITE">
+                                <Label text="Finished" textFill="WHITE">
                                     <font><Font name="ArtifaktElement-Heavy" size="17.0" /></font>
                                 </Label>
                                 <Line endX="178.0" opacity="0.65" stroke="#ffffff" />
                                 <HBox alignment="CENTER_LEFT" spacing="16.0">
                                     <children>
-                                        <Label text="3" textFill="WHITE">
+                                        <Label fx:id="finishedMatchesCountLabel" text="0" textFill="WHITE">
                                             <font><Font name="ArtifaktElement-Heavy" size="32.0" /></font>
                                         </Label>
                                         <ImageView fitHeight="34.0" fitWidth="34.0" preserveRatio="true">
@@ -210,60 +210,60 @@
 
                                 <HBox spacing="24.0">
                                     <children>
-                                        <Label prefWidth="52.0" text="Time" textFill="#d3e2e7" />
+                                        <Label prefWidth="52.0" text="Date" textFill="#d3e2e7" />
                                         <Label prefWidth="170.0" text="Teams" textFill="#d3e2e7" />
                                         <Label prefWidth="75.0" text="Status" textFill="#d3e2e7" />
-                                        <Label prefWidth="55.0" text="Score" textFill="#d3e2e7" />
+                                        <Label prefWidth="55.0" text="Result" textFill="#d3e2e7" />
                                     </children>
                                 </HBox>
                                 <Line endX="390.0" opacity="0.22" stroke="#d3e2e7" />
 
                                 <HBox spacing="24.0" alignment="CENTER_LEFT">
                                     <children>
-                                        <Label prefWidth="52.0" text="10:00" textFill="WHITE" />
-                                        <Label prefWidth="170.0" text="Team Lions vs Titans" textFill="WHITE" />
-                                        <Label prefWidth="75.0" text="Live" textFill="#d3e2e7" />
-                                        <Label prefWidth="55.0" text="2 - 1" textFill="WHITE" />
+                                        <Label fx:id="match1DateLabel" prefWidth="52.0" text="-" textFill="WHITE" />
+                                        <Label fx:id="match1TeamsLabel" prefWidth="170.0" text="-" textFill="WHITE" />
+                                        <Label fx:id="match1StatusLabel" prefWidth="75.0" text="-" textFill="#d3e2e7" />
+                                        <Label fx:id="match1ScoreLabel" prefWidth="55.0" text="-" textFill="WHITE" />
                                     </children>
                                 </HBox>
                                 <Line endX="390.0" opacity="0.18" stroke="#d3e2e7" />
 
                                 <HBox spacing="24.0" alignment="CENTER_LEFT">
                                     <children>
-                                        <Label prefWidth="52.0" text="12:30" textFill="WHITE" />
-                                        <Label prefWidth="170.0" text="Nexus Squad vs Apex" textFill="WHITE" />
-                                        <Label prefWidth="75.0" text="Upcoming" textFill="#d3e2e7" />
-                                        <Label prefWidth="55.0" text="-" textFill="WHITE" />
+                                        <Label fx:id="match2DateLabel" prefWidth="52.0" text="-" textFill="WHITE" />
+                                        <Label fx:id="match2TeamsLabel" prefWidth="170.0" text="-" textFill="WHITE" />
+                                        <Label fx:id="match2StatusLabel" prefWidth="75.0" text="-" textFill="#d3e2e7" />
+                                        <Label fx:id="match2ScoreLabel" prefWidth="55.0" text="-" textFill="WHITE" />
                                     </children>
                                 </HBox>
                                 <Line endX="390.0" opacity="0.18" stroke="#d3e2e7" />
 
                                 <HBox spacing="24.0" alignment="CENTER_LEFT">
                                     <children>
-                                        <Label prefWidth="52.0" text="14:00" textFill="WHITE" />
-                                        <Label prefWidth="170.0" text="Wolves vs Sharks" textFill="WHITE" />
-                                        <Label prefWidth="75.0" text="Upcoming" textFill="#d3e2e7" />
-                                        <Label prefWidth="55.0" text="-" textFill="WHITE" />
+                                        <Label fx:id="match3DateLabel" prefWidth="52.0" text="-" textFill="WHITE" />
+                                        <Label fx:id="match3TeamsLabel" prefWidth="170.0" text="-" textFill="WHITE" />
+                                        <Label fx:id="match3StatusLabel" prefWidth="75.0" text="-" textFill="#d3e2e7" />
+                                        <Label fx:id="match3ScoreLabel" prefWidth="55.0" text="-" textFill="WHITE" />
                                     </children>
                                 </HBox>
                                 <Line endX="390.0" opacity="0.18" stroke="#d3e2e7" />
 
                                 <HBox spacing="24.0" alignment="CENTER_LEFT">
                                     <children>
-                                        <Label prefWidth="52.0" text="18:00" textFill="WHITE" />
-                                        <Label prefWidth="170.0" text="Iron Brokers vs Titans" textFill="WHITE" />
-                                        <Label prefWidth="75.0" text="Finished" textFill="#d3e2e7" />
-                                        <Label prefWidth="55.0" text="0 - 2" textFill="WHITE" />
+                                        <Label fx:id="match4DateLabel" prefWidth="52.0" text="-" textFill="WHITE" />
+                                        <Label fx:id="match4TeamsLabel" prefWidth="170.0" text="-" textFill="WHITE" />
+                                        <Label fx:id="match4StatusLabel" prefWidth="75.0" text="-" textFill="#d3e2e7" />
+                                        <Label fx:id="match4ScoreLabel" prefWidth="55.0" text="-" textFill="WHITE" />
                                     </children>
                                 </HBox>
                                 <Line endX="390.0" opacity="0.18" stroke="#d3e2e7" />
 
                                 <HBox spacing="24.0" alignment="CENTER_LEFT">
                                     <children>
-                                        <Label prefWidth="52.0" text="20:00" textFill="WHITE" />
-                                        <Label prefWidth="170.0" text="Winners vs Legends" textFill="WHITE" />
-                                        <Label prefWidth="75.0" text="Upcoming" textFill="#d3e2e7" />
-                                        <Label prefWidth="55.0" text="-" textFill="WHITE" />
+                                        <Label fx:id="match5DateLabel" prefWidth="52.0" text="-" textFill="WHITE" />
+                                        <Label fx:id="match5TeamsLabel" prefWidth="170.0" text="-" textFill="WHITE" />
+                                        <Label fx:id="match5StatusLabel" prefWidth="75.0" text="-" textFill="#d3e2e7" />
+                                        <Label fx:id="match5ScoreLabel" prefWidth="55.0" text="-" textFill="WHITE" />
                                     </children>
                                 </HBox>
                             </children>
@@ -277,25 +277,26 @@
                                     <font><Font name="ArtifaktElement-Heavy" size="20.0" /></font>
                                 </Label>
                                 <Line endX="200.0" opacity="0.35" stroke="WHITE" />
-                                <!-- هون ممكن تحطي صورة للـ featured match أو banner للمباراة -->
+
                                 <VBox alignment="CENTER" prefHeight="104.0" prefWidth="200.0"
                                       style="-fx-background-color: #02182e; -fx-background-radius: 20;">
                                     <children>
                                         <ImageView fitHeight="54.0" fitWidth="54.0" preserveRatio="true">
                                             <image><Image url="@images/match (1).png" /></image>
                                         </ImageView>
-                                        <Label text="LIVE MATCH" textFill="#d3e2e7">
+                                        <Label fx:id="featuredMatchStatusLabel" text="MATCH" textFill="#d3e2e7">
                                             <font><Font name="ArtifaktElement-Heavy" size="13.0" /></font>
                                         </Label>
                                     </children>
                                 </VBox>
-                                <Label text="Team Lions" textFill="WHITE">
+
+                                <Label fx:id="featuredMatchTeam1Label" text="Team 1" textFill="WHITE">
                                     <font><Font name="ArtifaktElement-Heavy" size="22.0" /></font>
                                 </Label>
                                 <Label text="vs" textFill="#02182e">
                                     <font><Font name="ArtifaktElement-Heavy" size="16.0" /></font>
                                 </Label>
-                                <Label text="The Titans" textFill="WHITE">
+                                <Label fx:id="featuredMatchTeam2Label" text="Team 2" textFill="WHITE">
                                     <font><Font name="ArtifaktElement-Heavy" size="22.0" /></font>
                                 </Label>
                                 <Line endX="200.0" opacity="0.35" stroke="WHITE" />
@@ -303,14 +304,18 @@
                                     <children>
                                         <VBox alignment="CENTER">
                                             <children>
-                                                <Label text="2" textFill="WHITE"><font><Font name="ArtifaktElement-Heavy" size="30.0" /></font></Label>
-                                                <Label text="Lions" textFill="#d3e2e7" />
+                                                <Label fx:id="featuredMatchScore1Label" text="-" textFill="WHITE">
+                                                    <font><Font name="ArtifaktElement-Heavy" size="30.0" /></font>
+                                                </Label>
+                                                <Label fx:id="featuredMatchShortTeam1Label" text="Team 1" textFill="#d3e2e7" />
                                             </children>
                                         </VBox>
                                         <VBox alignment="CENTER">
                                             <children>
-                                                <Label text="1" textFill="WHITE"><font><Font name="ArtifaktElement-Heavy" size="30.0" /></font></Label>
-                                                <Label text="Titans" textFill="#d3e2e7" />
+                                                <Label fx:id="featuredMatchScore2Label" text="-" textFill="WHITE">
+                                                    <font><Font name="ArtifaktElement-Heavy" size="30.0" /></font>
+                                                </Label>
+                                                <Label fx:id="featuredMatchShortTeam2Label" text="Team 2" textFill="#d3e2e7" />
                                             </children>
                                         </VBox>
                                     </children>

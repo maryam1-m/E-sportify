@@ -1,110 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:controller="org.example.controller.AdminGamesController"
-            prefHeight="700.0" prefWidth="1000.0"
-            xmlns="http://javafx.com/javafx/25"
-            xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.AdminGamesController">
 
     <left>
-        <VBox spacing="17.0" prefWidth="160.0"
-              style="-fx-background-color: #02182e;"
-              BorderPane.alignment="CENTER">
+        <VBox prefWidth="160.0" spacing="17.0" style="-fx-background-color: #02182e;" BorderPane.alignment="CENTER">
             <padding>
-                <Insets left="20.0" top="10.0"/>
+                <Insets left="20.0" top="10.0" />
             </padding>
 
             <children>
-                <Label prefHeight="41.0" prefWidth="130.0"
-                       text="   E-Sportify" textFill="#d3e2e7">
+                <Label prefHeight="41.0" prefWidth="130.0" text="   E-Sportify" textFill="#d3e2e7">
                     <font>
-                        <Font name="Century Schoolbook Bold" size="16.0"/>
+                        <Font name="Century Schoolbook Bold" size="16.0" />
                     </font>
                 </Label>
 
-                <Button onAction="#goToDashboard" prefHeight="30.0" prefWidth="130.0"
-                        style="-fx-background-color: #02182e; -fx-cursor: hand;"
-                        text="   Dashboard" textFill="WHITE">
+                <Button onAction="#goToDashboard" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: #02182e; -fx-cursor: hand;" text="   Dashboard" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="22.0" fitWidth="16.0" preserveRatio="true">
-                            <image><Image url="@images/progress.png"/></image>
+                            <image><Image url="@images/progress.png" /></image>
                         </ImageView>
                     </graphic>
                 </Button>
 
-                <Button onAction="#goToPlayers" prefHeight="30.0" prefWidth="130.0"
-                        style="-fx-background-color: #02182e; -fx-cursor: hand;"
-                        text="       Players" textFill="WHITE">
+                <Button onAction="#goToPlayers" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: #02182e; -fx-cursor: hand;" text="       Players" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="17.0" fitWidth="39.0" preserveRatio="true">
-                            <image><Image url="@images/soccer-player.png"/></image>
+                            <image><Image url="@images/soccer-player.png" /></image>
                         </ImageView>
                     </graphic>
                 </Button>
 
-                <Button onAction="#goToTeams" prefHeight="30.0" prefWidth="130.0"
-                        style="-fx-background-color: #02182e; -fx-cursor: hand;"
-                        text="       Teams" textFill="WHITE">
+                <Button onAction="#goToTeams" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: #02182e; -fx-cursor: hand;" text="       Teams" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="22.0" fitWidth="24.0" preserveRatio="true">
-                            <image><Image url="@images/team.png"/></image>
+                            <image><Image url="@images/team.png" /></image>
                         </ImageView>
                     </graphic>
                 </Button>
 
-                <Button onAction="#goToTournaments" prefHeight="30.0" prefWidth="140.0"
-                        style="-fx-background-color: #02182e; -fx-cursor: hand;"
-                        text=" Tournments" textFill="WHITE">
+                <Button onAction="#goToTournaments" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #02182e; -fx-cursor: hand;" text=" Tournments" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="23.0" fitWidth="25.0" preserveRatio="true">
-                            <image><Image url="@images/team-building.png"/></image>
+                            <image><Image url="@images/team-building.png" /></image>
                         </ImageView>
                     </graphic>
                 </Button>
 
-                <Button onAction="#goToMatches" prefHeight="30.0" prefWidth="130.0"
-                        style="-fx-background-color: #02182e; -fx-cursor: hand;"
-                        text="    Matches" textFill="WHITE">
+                <Button onAction="#goToMatches" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: #02182e; -fx-cursor: hand;" text="    Matches" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="26.0" fitWidth="26.0" preserveRatio="true">
-                            <image><Image url="@images/match (1).png"/></image>
+                            <image><Image url="@images/match (1).png" /></image>
                         </ImageView>
                     </graphic>
                 </Button>
 
-                <Button prefHeight="35.0" prefWidth="130.0"
-                        style="-fx-background-color: #0b2b4a; -fx-background-radius: 15; -fx-cursor: hand;"
-                        text="     Games" textFill="WHITE">
+                <Button prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #0b2b4a; -fx-background-radius: 15; -fx-cursor: hand;" text="     Games" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="32.0" fitWidth="28.0" preserveRatio="true">
-                            <image><Image url="@images/game-controller.png"/></image>
+                            <image><Image url="@images/game-controller.png" /></image>
                         </ImageView>
                     </graphic>
                 </Button>
 
-                <Button onAction="#goToSeasons" prefHeight="30.0" prefWidth="130.0"
-                        style="-fx-background-color: #02182e; -fx-cursor: hand;"
-                        text="    Seasons" textFill="WHITE">
+                <Button onAction="#goToSeasons" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: #02182e; -fx-cursor: hand;" text="    Seasons" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="32.0" fitWidth="22.0" preserveRatio="true">
-                            <image><Image url="@images/calendar.png"/></image>
+                            <image><Image url="@images/calendar.png" /></image>
                         </ImageView>
                     </graphic>
                 </Button>
 
-                <Button onAction="#logout" prefHeight="30.0" prefWidth="130.0"
-                        style="-fx-background-color: #02182e; -fx-cursor: hand;"
-                        text="      LogOut" textFill="WHITE">
+                <Button onAction="#logout" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: #02182e; -fx-cursor: hand;" text="      LogOut" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="19.0" fitWidth="25.0" preserveRatio="true">
-                            <image><Image url="@images/logout.png"/></image>
+                            <image><Image url="@images/logout.png" /></image>
                         </ImageView>
                     </graphic>
                 </Button>
@@ -113,118 +100,96 @@
     </left>
 
     <center>
-        <VBox spacing="16.0" prefWidth="840.0"
-              style="-fx-background-color: #02182e;">
+        <VBox prefWidth="840.0" spacing="16.0" style="-fx-background-color: #02182e;">
             <padding>
-                <Insets top="22.0" right="24.0" bottom="22.0" left="24.0"/>
+                <Insets bottom="22.0" left="24.0" right="24.0" top="22.0" />
             </padding>
 
-            <HBox alignment="CENTER_LEFT" prefHeight="80.0" spacing="18.0"
-                  style="-fx-background-color: #022c50; -fx-background-radius: 24; -fx-padding: 12 20;">
+            <HBox alignment="CENTER_LEFT" prefHeight="80.0" spacing="18.0" style="-fx-background-color: #022c50; -fx-background-radius: 24; -fx-padding: 12 20;">
                 <ImageView fitHeight="55.0" fitWidth="55.0" preserveRatio="true">
-                    <image><Image url="@images/game-controller.png"/></image>
+                    <image><Image url="@images/game-controller.png" /></image>
                 </ImageView>
 
                 <VBox spacing="4.0" HBox.hgrow="ALWAYS">
                     <Label text="Games Management" textFill="WHITE">
-                        <font><Font name="Century Schoolbook Bold" size="25.0"/></font>
+                        <font><Font name="Century Schoolbook Bold" size="25.0" /></font>
                     </Label>
-                    <Label text="Add, update, delete and view all games with their categories"
-                           textFill="#d3e2e7"/>
+                    <Label text="Add, update, delete and view all games with their categories" textFill="#d3e2e7" />
                 </VBox>
 
-                <VBox alignment="CENTER" prefHeight="58.0" prefWidth="115.0"
-                      style="-fx-background-color: #2b537e; -fx-background-radius: 18;">
-                    <Label text="Total Games" textFill="#d3e2e7"/>
+                <VBox alignment="CENTER" prefHeight="58.0" prefWidth="115.0" style="-fx-background-color: #2b537e; -fx-background-radius: 18;">
+                    <Label text="Total Games" textFill="#d3e2e7" />
                     <Label fx:id="totalGamesLabel" text="0" textFill="WHITE">
-                        <font><Font name="System Bold" size="24.0"/></font>
+                        <font><Font name="System Bold" size="24.0" /></font>
                     </Label>
                 </VBox>
             </HBox>
 
             <HBox spacing="16.0" VBox.vgrow="ALWAYS">
 
-                <VBox prefWidth="270.0" spacing="8.0"
-                      style="-fx-background-color: #022c50; -fx-background-radius: 24; -fx-padding: 16;">
-                    <Label text="Game Details" textFill="WHITE">
-                        <font><Font name="System Bold" size="20.0"/></font>
-                    </Label>
-
-                    <Line endX="225.0" opacity="0.35" stroke="#d3e2e7"/>
-
-                    <Label text="Game ID" textFill="#d3e2e7"/>
-                    <TextField fx:id="gameIdField" editable="false" promptText="Auto"
-                               style="-fx-background-radius: 14; -fx-background-color: #d3e2e7;"/>
-
-                    <Label text="Title" textFill="#d3e2e7"/>
-                    <TextField fx:id="titleField" promptText="Example: Valorant"
-                               style="-fx-background-radius: 14; -fx-background-color: #d3e2e7;"/>
-
-                    <Label text="Price" textFill="#d3e2e7"/>
-                    <TextField fx:id="priceField" promptText="Example: 59.99"
-                               style="-fx-background-radius: 14; -fx-background-color: #d3e2e7;"/>
-
-                    <Label text="Release Date" textFill="#d3e2e7"/>
-                    <DatePicker fx:id="releaseDatePicker" prefWidth="235.0"
-                                style="-fx-background-radius: 14;"/>
-
-                    <Label text="Developer Name" textFill="#d3e2e7"/>
-                    <TextField fx:id="developerField" promptText="Example: Riot Games"
-                               style="-fx-background-radius: 14; -fx-background-color: #d3e2e7;"/>
-
-                    <Label text="Category" textFill="#d3e2e7"/>
-                    <ComboBox fx:id="categoryComboBox" prefWidth="235.0"
-                              promptText="Select Category"
-                              style="-fx-background-radius: 14;"/>
-
-                    <HBox alignment="CENTER" spacing="8.0">
-                        <Button onAction="#addGame" text="Add" prefWidth="70.0"
-                                style="-fx-background-color: #5f86a6; -fx-background-radius: 14; -fx-text-fill: white;"/>
-                        <Button onAction="#updateGame" text="Update" prefWidth="75.0"
-                                style="-fx-background-color: #2b537e; -fx-background-radius: 14; -fx-text-fill: white;"/>
-                        <Button onAction="#clearFields" text="Clear" prefWidth="70.0"
-                                style="-fx-background-color: #8197ac; -fx-background-radius: 14; -fx-text-fill: white;"/>
-                    </HBox>
-
-                    <Button onAction="#deleteGame"
-                            text="Delete Selected Game"
-                            prefWidth="235.0"
-                            style="-fx-background-color: #8b2f3c; -fx-background-radius: 14; -fx-text-fill: white;"/>
-                </VBox>
-
-                <VBox spacing="12.0" HBox.hgrow="ALWAYS"
-                      style="-fx-background-color: #022c50; -fx-background-radius: 24; -fx-padding: 16;">
+                <VBox spacing="12.0" style="-fx-background-color: #022c50; -fx-background-radius: 24; -fx-padding: 16;" HBox.hgrow="ALWAYS">
                     <HBox alignment="CENTER_LEFT" spacing="10.0">
                         <Label text="Games List" textFill="WHITE">
-                            <font><Font name="System Bold" size="20.0"/></font>
+                            <font><Font name="System Bold" size="20.0" /></font>
                         </Label>
 
-                        <Region HBox.hgrow="ALWAYS"/>
+                        <Region HBox.hgrow="ALWAYS" />
 
-                        <TextField fx:id="searchField" promptText="Search game..."
-                                   prefWidth="170.0"
-                                   style="-fx-background-radius: 14; -fx-background-color: #d3e2e7;"/>
+                        <TextField fx:id="searchField" prefWidth="170.0" promptText="Search game..." style="-fx-background-radius: 14; -fx-background-color: #d3e2e7;" />
 
-                        <Button onAction="#searchGames" text="Search"
-                                style="-fx-background-color: #5f86a6; -fx-background-radius: 14; -fx-text-fill: white;"/>
+                        <Button onAction="#searchGames" style="-fx-background-color: #5f86a6; -fx-background-radius: 14; -fx-text-fill: white;" text="Search" />
 
-                        <Button onAction="#loadGames" text="Refresh"
-                                style="-fx-background-color: #2b537e; -fx-background-radius: 14; -fx-text-fill: white;"/>
+                        <Button onAction="#loadGames" style="-fx-background-color: #2b537e; -fx-background-radius: 14; -fx-text-fill: white;" text="Refresh" />
                     </HBox>
+   
+                   <VBox prefWidth="270.0" spacing="8.0" style="-fx-background-color: #022c50; -fx-background-radius: 24; -fx-padding: 16;">
+                       <Label text="Game Details" textFill="WHITE">
+                           <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                       </Label>
+   
+                       <Line endX="225.0" opacity="0.35" stroke="#d3e2e7" />
+   
+                       <Label text="Game ID" textFill="#d3e2e7" />
+                       <TextField fx:id="gameIdField" editable="false" promptText="Auto" style="-fx-background-radius: 14; -fx-background-color: #d3e2e7;" />
+   
+                       <Label text="Title" textFill="#d3e2e7" />
+                       <TextField fx:id="titleField" promptText="Example: Valorant" style="-fx-background-radius: 14; -fx-background-color: #d3e2e7;" />
+   
+                       <Label text="Price" textFill="#d3e2e7" />
+                       <TextField fx:id="priceField" promptText="Example: 59.99" style="-fx-background-radius: 14; -fx-background-color: #d3e2e7;" />
+   
+                       <Label text="Release Date" textFill="#d3e2e7" />
+                       <DatePicker fx:id="releaseDatePicker" prefWidth="235.0" style="-fx-background-radius: 14;" />
+   
+                       <Label text="Developer Name" textFill="#d3e2e7" />
+                       <TextField fx:id="developerField" promptText="Example: Riot Games" style="-fx-background-radius: 14; -fx-background-color: #d3e2e7;" />
+   
+                       <Label text="Category" textFill="#d3e2e7" />
+                       <ComboBox fx:id="categoryComboBox" prefWidth="235.0" promptText="Select Category" style="-fx-background-radius: 14;" />
+   
+                       <HBox alignment="CENTER" spacing="8.0">
+                           <Button onAction="#addGame" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 14; -fx-text-fill: white;" text="Add" />
+                           <Button onAction="#updateGame" prefWidth="75.0" style="-fx-background-color: #2b537e; -fx-background-radius: 14; -fx-text-fill: white;" text="Update" />
+                           <Button onAction="#clearFields" prefWidth="70.0" style="-fx-background-color: #8197ac; -fx-background-radius: 14; -fx-text-fill: white;" text="Clear" />
+                       </HBox>
+   
+                       <Button onAction="#deleteGame" prefWidth="235.0" style="-fx-background-color: #8b2f3c; -fx-background-radius: 14; -fx-text-fill: white;" text="Delete Selected Game" />
+                   </VBox>
 
-                    <TableView fx:id="gamesTable" prefHeight="470.0"
-                               style="-fx-background-radius: 18; -fx-border-radius: 18;">
+                    <TableView fx:id="gamesTable" prefHeight="470.0" style="-fx-background-radius: 18; -fx-border-radius: 18;">
                         <columns>
-                            <TableColumn fx:id="idColumn" text="ID" prefWidth="45.0"/>
-                            <TableColumn fx:id="titleColumn" text="Title" prefWidth="95.0"/>
-                            <TableColumn fx:id="priceColumn" text="Price" prefWidth="65.0"/>
-                            <TableColumn fx:id="releaseDateColumn" text="Release Date" prefWidth="105.0"/>
-                            <TableColumn fx:id="developerColumn" text="Developer" prefWidth="115.0"/>
-                            <TableColumn fx:id="categoryColumn" text="Category" prefWidth="100.0"/>
+                            <TableColumn fx:id="idColumn" prefWidth="45.0" text="ID" />
+                            <TableColumn fx:id="titleColumn" prefWidth="95.0" text="Title" />
+                            <TableColumn fx:id="priceColumn" prefWidth="65.0" text="Price" />
+                            <TableColumn fx:id="releaseDateColumn" prefWidth="105.0" text="Release Date" />
+                            <TableColumn fx:id="developerColumn" prefWidth="115.0" text="Developer" />
+                            <TableColumn fx:id="categoryColumn" prefWidth="100.0" text="Category" />
                         </columns>
                     </TableView>
 
-                    <Label fx:id="messageLabel" text="" textFill="#d3e2e7"/>
+                    <Label fx:id="messageLabel" text="" textFill="#d3e2e7" />
                 </VBox>
             </HBox>
         </VBox>
