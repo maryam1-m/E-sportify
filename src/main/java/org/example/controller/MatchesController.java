@@ -1,6 +1,8 @@
 package org.example.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import org.example.database.DatabaseConnection;
 
@@ -13,42 +15,75 @@ import java.util.List;
 
 public class MatchesController extends DashboardController {
 
-    @FXML private Label totalMatchesCountLabel;
-    @FXML private Label upcomingMatchesCountLabel;
-    @FXML private Label finishedMatchesCountLabel;
+    @FXML
+    private Label totalMatchesCountLabel;
+    @FXML
+    private Label upcomingMatchesCountLabel;
+    @FXML
+    private Label finishedMatchesCountLabel;
 
-    @FXML private Label match1DateLabel;
-    @FXML private Label match1TeamsLabel;
-    @FXML private Label match1StatusLabel;
-    @FXML private Label match1ScoreLabel;
+    @FXML
+    private Label match1DateLabel;
+    @FXML
+    private Label match1TeamsLabel;
+    @FXML
+    private Label match1StatusLabel;
+    @FXML
+    private Label match1ScoreLabel;
 
-    @FXML private Label match2DateLabel;
-    @FXML private Label match2TeamsLabel;
-    @FXML private Label match2StatusLabel;
-    @FXML private Label match2ScoreLabel;
+    @FXML
+    private Label match2DateLabel;
+    @FXML
+    private Label match2TeamsLabel;
+    @FXML
+    private Label match2StatusLabel;
+    @FXML
+    private Label match2ScoreLabel;
 
-    @FXML private Label match3DateLabel;
-    @FXML private Label match3TeamsLabel;
-    @FXML private Label match3StatusLabel;
-    @FXML private Label match3ScoreLabel;
+    @FXML
+    private Label match3DateLabel;
+    @FXML
+    private Label match3TeamsLabel;
+    @FXML
+    private Label match3StatusLabel;
+    @FXML
+    private Label match3ScoreLabel;
 
-    @FXML private Label match4DateLabel;
-    @FXML private Label match4TeamsLabel;
-    @FXML private Label match4StatusLabel;
-    @FXML private Label match4ScoreLabel;
+    @FXML
+    private Label match4DateLabel;
+    @FXML
+    private Label match4TeamsLabel;
+    @FXML
+    private Label match4StatusLabel;
+    @FXML
+    private Label match4ScoreLabel;
 
-    @FXML private Label match5DateLabel;
-    @FXML private Label match5TeamsLabel;
-    @FXML private Label match5StatusLabel;
-    @FXML private Label match5ScoreLabel;
+    @FXML
+    private Label match5DateLabel;
+    @FXML
+    private Label match5TeamsLabel;
+    @FXML
+    private Label match5StatusLabel;
+    @FXML
+    private Label match5ScoreLabel;
 
-    @FXML private Label featuredMatchStatusLabel;
-    @FXML private Label featuredMatchTeam1Label;
-    @FXML private Label featuredMatchTeam2Label;
-    @FXML private Label featuredMatchScore1Label;
-    @FXML private Label featuredMatchScore2Label;
-    @FXML private Label featuredMatchShortTeam1Label;
-    @FXML private Label featuredMatchShortTeam2Label;
+    @FXML
+    private Label featuredMatchStatusLabel;
+    @FXML
+    private Label featuredMatchTeam1Label;
+    @FXML
+    private Label featuredMatchTeam2Label;
+    @FXML
+    private Label featuredMatchScore1Label;
+    @FXML
+    private Label featuredMatchScore2Label;
+    @FXML
+    private Label featuredMatchShortTeam1Label;
+    @FXML
+    private Label featuredMatchShortTeam2Label;
+
+    private final List<MatchRow> matchRows = new ArrayList<>();
+    private int filterMode;
 
     @FXML
     public void initialize() {
@@ -56,20 +91,31 @@ public class MatchesController extends DashboardController {
     }
 
     private void loadMatches() {
-        List<MatchRow> matches = new ArrayList<>();
+        matchRows.clear();
+
+        String outerFilter = switch (filterMode % 4) {
+            case 1 -> " WHERE sub.match_date > CURDATE() ";
+            case 2 -> " WHERE sub.match_date < CURDATE() ";
+            case 3 -> " WHERE sub.match_date = CURDATE() ";
+            default -> "";
+        };
 
         String sql = """
-                SELECT
-                    mg.match_id,
-                    mg.match_date,
-                    GROUP_CONCAT(t.team_name ORDER BY mp.final_rank SEPARATOR ' vs ') AS teams,
-                    GROUP_CONCAT(t.team_name ORDER BY mp.final_rank SEPARATOR ',') AS team_names,
-                    GROUP_CONCAT(mp.final_rank ORDER BY mp.final_rank SEPARATOR ' - ') AS score_text
-                FROM MatchGame mg
-                LEFT JOIN MatchParticipant mp ON mg.match_id = mp.match_id
-                LEFT JOIN Team t ON mp.team_id = t.team_id
-                GROUP BY mg.match_id, mg.match_date
-                ORDER BY mg.match_date
+                SELECT sub.match_id, sub.match_date, sub.teams, sub.team_names, sub.score_text
+                FROM (
+                    SELECT
+                        mg.match_id,
+                        mg.match_date,
+                        GROUP_CONCAT(t.team_name ORDER BY mp.final_rank SEPARATOR ' vs ') AS teams,
+                        GROUP_CONCAT(t.team_name ORDER BY mp.final_rank SEPARATOR ',') AS team_names,
+                        GROUP_CONCAT(mp.final_rank ORDER BY mp.final_rank SEPARATOR ' - ') AS score_text
+                    FROM MatchGame mg
+                    LEFT JOIN MatchParticipant mp ON mg.match_id = mp.match_id
+                    LEFT JOIN Team t ON mp.team_id = t.team_id
+                    GROUP BY mg.match_id, mg.match_date
+                ) sub
+                """ + outerFilter + """
+                ORDER BY sub.match_date
                 LIMIT 5
                 """;
 
@@ -83,7 +129,8 @@ public class MatchesController extends DashboardController {
                 String score = resultSet.getString("score_text") == null ? "-" : resultSet.getString("score_text");
                 String teamNames = resultSet.getString("team_names") == null ? "" : resultSet.getString("team_names");
 
-                matches.add(new MatchRow(
+                matchRows.add(new MatchRow(
+                        resultSet.getInt("match_id"),
                         matchDate.toString(),
                         teams,
                         getStatus(matchDate),
@@ -96,17 +143,49 @@ public class MatchesController extends DashboardController {
             setText(upcomingMatchesCountLabel, String.valueOf(count("SELECT COUNT(*) AS total FROM MatchGame WHERE match_date > CURDATE()")));
             setText(finishedMatchesCountLabel, String.valueOf(count("SELECT COUNT(*) AS total FROM MatchGame WHERE match_date < CURDATE()")));
 
-            fillMatch(0, matches, match1DateLabel, match1TeamsLabel, match1StatusLabel, match1ScoreLabel);
-            fillMatch(1, matches, match2DateLabel, match2TeamsLabel, match2StatusLabel, match2ScoreLabel);
-            fillMatch(2, matches, match3DateLabel, match3TeamsLabel, match3StatusLabel, match3ScoreLabel);
-            fillMatch(3, matches, match4DateLabel, match4TeamsLabel, match4StatusLabel, match4ScoreLabel);
-            fillMatch(4, matches, match5DateLabel, match5TeamsLabel, match5StatusLabel, match5ScoreLabel);
+            fillMatch(0, matchRows, match1DateLabel, match1TeamsLabel, match1StatusLabel, match1ScoreLabel);
+            fillMatch(1, matchRows, match2DateLabel, match2TeamsLabel, match2StatusLabel, match2ScoreLabel);
+            fillMatch(2, matchRows, match3DateLabel, match3TeamsLabel, match3StatusLabel, match3ScoreLabel);
+            fillMatch(3, matchRows, match4DateLabel, match4TeamsLabel, match4StatusLabel, match4ScoreLabel);
+            fillMatch(4, matchRows, match5DateLabel, match5TeamsLabel, match5StatusLabel, match5ScoreLabel);
 
-            fillFeaturedMatch(matches);
+            fillFeaturedMatch(matchRows);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void filterMatches(ActionEvent event) {
+        filterMode++;
+        String label = switch (filterMode % 4) {
+            case 1 -> "Upcoming";
+            case 2 -> "Finished";
+            case 3 -> "Today";
+            default -> "All";
+        };
+        loadMatches();
+        new Alert(Alert.AlertType.INFORMATION, "Filter: " + label).showAndWait();
+    }
+
+    @FXML
+    public void viewFeaturedMatchDetails(ActionEvent event) {
+        if (matchRows.isEmpty()) {
+            new Alert(Alert.AlertType.INFORMATION, "No match loaded.").showAndWait();
+            return;
+        }
+        MatchRow m = matchRows.get(0);
+        String body = "Match ID: " + m.matchId
+                + "\nDate: " + m.date
+                + "\nTeams: " + m.teams
+                + "\nStatus: " + m.status
+                + "\nRanks: " + m.score;
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Match details");
+        alert.setHeaderText(m.teams);
+        alert.setContentText(body);
+        alert.showAndWait();
     }
 
     private void fillFeaturedMatch(List<MatchRow> matches) {
@@ -190,13 +269,15 @@ public class MatchesController extends DashboardController {
     }
 
     private static class MatchRow {
+        int matchId;
         String date;
         String teams;
         String status;
         String score;
         String teamNames;
 
-        MatchRow(String date, String teams, String status, String score, String teamNames) {
+        MatchRow(int matchId, String date, String teams, String status, String score, String teamNames) {
+            this.matchId = matchId;
             this.date = date;
             this.teams = teams;
             this.status = status;

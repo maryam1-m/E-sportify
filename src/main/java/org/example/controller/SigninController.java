@@ -7,6 +7,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.example.database.DatabaseConnection;
+import org.example.session.UserSession;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -62,7 +63,11 @@ public class SigninController {
             return;
         }
 
-        String sql = "SELECT role FROM AppUser WHERE email = ? AND password = ?";
+        String sql = """
+                SELECT user_id, name, email, role, player_id
+                FROM AppUser
+                WHERE email = ? AND password = ?
+                """;
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -70,21 +75,32 @@ public class SigninController {
             statement.setString(1, email);
             statement.setString(2, password);
 
-            ResultSet resultSet = statement.executeQuery();
+            try (ResultSet resultSet = statement.executeQuery()) {
 
-            if (resultSet.next()) {
-                String role = resultSet.getString("role");
+                if (resultSet.next()) {
+                    int userId = resultSet.getInt("user_id");
+                    String name = resultSet.getString("name");
+                    String dbEmail = resultSet.getString("email");
+                    String role = resultSet.getString("role");
+                    int playerId = 0;
+                    if (resultSet.getObject("player_id") != null) {
+                        playerId = resultSet.getInt("player_id");
+                    }
 
-                if ("ADMIN".equalsIgnoreCase(role)) {
-                    Navigation.goTo(event, "DashboardAdmin.fxml");
-                } else if ("PLAYER".equalsIgnoreCase(role)) {
-                    Navigation.goTo(event, "dashboardInterface.fxml");
+                    UserSession.setSession(userId, playerId, name, dbEmail, role);
+
+                    if ("ADMIN".equalsIgnoreCase(role)) {
+                        Navigation.goTo(event, "DashboardAdmin.fxml");
+                    } else if ("PLAYER".equalsIgnoreCase(role)) {
+                        Navigation.goTo(event, "dashboardInterface.fxml");
+                    } else {
+                        UserSession.clearSession();
+                        showAlert("Login Error", "Unknown user role.");
+                    }
+
                 } else {
-                    showAlert("Login Error", "Unknown user role.");
+                    showAlert("Login Failed", "Invalid email or password.");
                 }
-
-            } else {
-                showAlert("Login Failed", "Invalid email or password.");
             }
 
         } catch (Exception e) {

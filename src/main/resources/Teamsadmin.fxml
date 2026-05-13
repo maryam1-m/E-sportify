@@ -27,7 +27,7 @@
                     <graphic><ImageView fitHeight="17.0" fitWidth="39.0" preserveRatio="true"><image><Image url="@images/soccer-player.png"/></image></ImageView></graphic>
                 </Button>
 
-                <Button prefWidth="106.0" style="-fx-background-color: #0b345c; -fx-background-radius: 12;" text=" Teams" textFill="WHITE">
+                <Button onAction="#goToTeams" prefWidth="106.0" style="-fx-background-color: #0b345c; -fx-background-radius: 12;" text=" Teams" textFill="WHITE">
                     <graphic><ImageView fitHeight="20.0" fitWidth="25.0" preserveRatio="true"><image><Image url="@images/team.png"/></image></ImageView></graphic>
                 </Button>
 

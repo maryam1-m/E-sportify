@@ -252,7 +252,7 @@
 
                                 <Region VBox.vgrow="ALWAYS" />
 
-                                <Button maxWidth="Infinity" prefHeight="36.0" style="-fx-background-color: #02182e; -fx-background-radius: 16;" text="View Season Details" textFill="WHITE" />
+                                <Button maxWidth="Infinity" onAction="#viewFeaturedSeasonDetails" prefHeight="36.0" style="-fx-background-color: #02182e; -fx-background-radius: 16;" text="View Season Details" textFill="WHITE" />
                             </children>
                         </VBox>
 
@@ -270,7 +270,7 @@
 
                                         <Region HBox.hgrow="ALWAYS" />
 
-                                        <Button prefHeight="30.0" prefWidth="82.0" style="-fx-background-color: #2b537e; -fx-background-radius: 14;" text="Filter" textFill="WHITE" />
+                                        <Button onAction="#filterSeasons" prefHeight="30.0" prefWidth="82.0" style="-fx-background-color: #2b537e; -fx-background-radius: 14;" text="Filter" textFill="WHITE" />
                                     </children>
                                 </HBox>
 
@@ -290,7 +290,7 @@
                                             </children>
                                         </VBox>
 
-                                        <Button prefHeight="28.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 12;" text="Open" textFill="WHITE" />
+                                        <Button onAction="#openSeason1" prefHeight="28.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 12;" text="Open" textFill="WHITE" />
                                     </children>
                                 </HBox>
 
@@ -308,7 +308,7 @@
                                             </children>
                                         </VBox>
 
-                                        <Button prefHeight="28.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 12;" text="Open" textFill="WHITE" />
+                                        <Button onAction="#openSeason2" prefHeight="28.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 12;" text="Open" textFill="WHITE" />
                                     </children>
                                 </HBox>
 
@@ -326,7 +326,7 @@
                                             </children>
                                         </VBox>
 
-                                        <Button prefHeight="28.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 12;" text="Open" textFill="WHITE" />
+                                        <Button onAction="#openSeason3" prefHeight="28.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 12;" text="Open" textFill="WHITE" />
                                     </children>
                                 </HBox>
 
@@ -344,7 +344,7 @@
                                             </children>
                                         </VBox>
 
-                                        <Button prefHeight="28.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 12;" text="Open" textFill="WHITE" />
+                                        <Button onAction="#openSeason4" prefHeight="28.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 12;" text="Open" textFill="WHITE" />
                                     </children>
                                 </HBox>
                             </children>

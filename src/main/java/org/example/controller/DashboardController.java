@@ -218,6 +218,6 @@ public class DashboardController {
 
     public void logout(ActionEvent event) throws Exception {
         UserSession.clearSession();
-        Navigation.goTo(event, "signInFrame.fxml");
+        Navigation.goTo(event, "signinFrame.fxml");
     }
 }

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:controller="org.example.controller.MatchesController"
+<BorderPane fx:controller="org.example.controller.AdminMatchesController"
             prefHeight="650.0" prefWidth="900.0"
             maxHeight="-Infinity" maxWidth="-Infinity"
             minHeight="-Infinity" minWidth="-Infinity"
@@ -37,7 +37,7 @@
                     <graphic><ImageView fitHeight="21.0" fitWidth="27.0" preserveRatio="true"><image><Image url="@images/team-building.png"/></image></ImageView></graphic>
                 </Button>
 
-                <Button prefHeight="34.0" prefWidth="140.0" style="-fx-background-color: #0b345c; -fx-background-radius: 14;" text=" Matches" textFill="WHITE">
+                <Button onAction="#goToMatches" prefHeight="34.0" prefWidth="140.0" style="-fx-background-color: #0b345c; -fx-background-radius: 14;" text=" Matches" textFill="WHITE">
                     <graphic><ImageView fitHeight="26.0" fitWidth="26.0" preserveRatio="true"><image><Image url="@images/match (1).png"/></image></ImageView></graphic>
                 </Button>
 

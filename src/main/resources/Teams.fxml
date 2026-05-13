@@ -51,7 +51,7 @@
                 </Button>
 
                 <!-- Current Page -->
-                <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="118.0" style="-fx-background-color: #0b345c; -fx-background-radius: 12;" text="      Teams" textFill="WHITE">
+                <Button mnemonicParsing="false" onAction="#goToTeams" prefHeight="28.0" prefWidth="118.0" style="-fx-background-color: #0b345c; -fx-background-radius: 12;" text="      Teams" textFill="WHITE">
                     <graphic>
                         <ImageView fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -211,6 +211,8 @@
                                     </font>
                                 </Label>
 
+                                <Button mnemonicParsing="false" onAction="#joinTeam" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" text="Join Team" textFill="WHITE" />
+
                             </children>
                         </VBox>
 
@@ -366,7 +368,7 @@
                                 <Label fx:id="member1RoleLabel" prefWidth="95.0" text="-" textFill="#d3e2e7" />
                                 <Label fx:id="member1StatusLabel" prefWidth="80.0" text="-" textFill="#d3e2e7" />
 
-                                <Button mnemonicParsing="false" onAction="#viewMemberDetails" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" text="View" textFill="WHITE" />
+                                <Button mnemonicParsing="false" onAction="#viewMemberSlot1" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" text="View" textFill="WHITE" />
                             </children>
                         </HBox>
 
@@ -381,7 +383,7 @@
                                 <Label fx:id="member2RoleLabel" prefWidth="95.0" text="-" textFill="#d3e2e7" />
                                 <Label fx:id="member2StatusLabel" prefWidth="80.0" text="-" textFill="#d3e2e7" />
 
-                                <Button mnemonicParsing="false" onAction="#viewMemberDetails" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" text="View" textFill="WHITE" />
+                                <Button mnemonicParsing="false" onAction="#viewMemberSlot2" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" text="View" textFill="WHITE" />
                             </children>
                         </HBox>
 
@@ -396,7 +398,7 @@
                                 <Label fx:id="member3RoleLabel" prefWidth="95.0" text="-" textFill="#d3e2e7" />
                                 <Label fx:id="member3StatusLabel" prefWidth="80.0" text="-" textFill="#d3e2e7" />
 
-                                <Button mnemonicParsing="false" onAction="#viewMemberDetails" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" text="View" textFill="WHITE" />
+                                <Button mnemonicParsing="false" onAction="#viewMemberSlot3" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" text="View" textFill="WHITE" />
                             </children>
                         </HBox>
 
@@ -411,7 +413,7 @@
                                 <Label fx:id="member4RoleLabel" prefWidth="95.0" text="-" textFill="#d3e2e7" />
                                 <Label fx:id="member4StatusLabel" prefWidth="80.0" text="-" textFill="#d3e2e7" />
 
-                                <Button mnemonicParsing="false" onAction="#viewMemberDetails" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" text="View" textFill="WHITE" />
+                                <Button mnemonicParsing="false" onAction="#viewMemberSlot4" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" text="View" textFill="WHITE" />
                             </children>
                         </HBox>
 

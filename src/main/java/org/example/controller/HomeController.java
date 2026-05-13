@@ -5,7 +5,7 @@ import javafx.event.ActionEvent;
 public class HomeController {
 
     public void goToLogin(ActionEvent event) throws Exception {
-        Navigation.goTo(event, "signInFrame.fxml");
+        Navigation.goTo(event, "signinFrame.fxml");
     }
 
     public void goToSignup(ActionEvent event) throws Exception {

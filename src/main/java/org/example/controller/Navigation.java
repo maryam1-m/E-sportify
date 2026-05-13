@@ -6,15 +6,20 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Navigation {
+import java.net.URL;
+
+public final class Navigation {
+
+    private Navigation() {
+    }
 
     public static void goTo(ActionEvent event, String fxmlFile) throws Exception {
-        FXMLLoader loader = new FXMLLoader(
-                Navigation.class.getResource("/" + fxmlFile)
-        );
-
+        URL url = Navigation.class.getResource("/" + fxmlFile);
+        if (url == null) {
+            throw new IllegalStateException("FXML not found on classpath: /" + fxmlFile);
+        }
+        FXMLLoader loader = new FXMLLoader(url);
         Scene scene = new Scene(loader.load());
-
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();

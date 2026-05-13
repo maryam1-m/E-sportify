@@ -65,7 +65,7 @@
                 </Button>
 
                 <!-- Current Page -->
-                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0"
+                <Button mnemonicParsing="false" onAction="#goToTournaments" prefHeight="26.0" prefWidth="132.0"
                         style="-fx-background-color: #0b345c; -fx-background-radius: 12;"
                         text="     Tournments " textFill="WHITE">
                     <graphic>
@@ -447,12 +447,22 @@
                                 <Label prefWidth="75.0" text="8" textFill="#d3e2e7" />
                                 <Label prefWidth="90.0" text="Active" textFill="#d3e2e7" />
 
-                                <Button onAction="#viewTournamentDetails"
-                                        mnemonicParsing="false"
-                                        prefHeight="25.0" prefWidth="70.0"
-                                        text="View"
-                                        textFill="WHITE"
-                                        style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" />
+                                <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                    <children>
+                                        <Button onAction="#viewTournamentRow1Details"
+                                                mnemonicParsing="false"
+                                                prefHeight="25.0" prefWidth="58.0"
+                                                text="View"
+                                                textFill="WHITE"
+                                                style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" />
+                                        <Button onAction="#joinTournamentRow1"
+                                                mnemonicParsing="false"
+                                                prefHeight="25.0" prefWidth="58.0"
+                                                text="Join"
+                                                textFill="WHITE"
+                                                style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" />
+                                    </children>
+                                </HBox>
                             </children>
                         </HBox>
 
@@ -467,12 +477,22 @@
                                 <Label prefWidth="75.0" text="12" textFill="#d3e2e7" />
                                 <Label prefWidth="90.0" text="Upcoming" textFill="#d3e2e7" />
 
-                                <Button onAction="#viewTournamentDetails"
-                                        mnemonicParsing="false"
-                                        prefHeight="25.0" prefWidth="70.0"
-                                        text="View"
-                                        textFill="WHITE"
-                                        style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" />
+                                <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                    <children>
+                                        <Button onAction="#viewTournamentRow2Details"
+                                                mnemonicParsing="false"
+                                                prefHeight="25.0" prefWidth="58.0"
+                                                text="View"
+                                                textFill="WHITE"
+                                                style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" />
+                                        <Button onAction="#joinTournamentRow2"
+                                                mnemonicParsing="false"
+                                                prefHeight="25.0" prefWidth="58.0"
+                                                text="Join"
+                                                textFill="WHITE"
+                                                style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" />
+                                    </children>
+                                </HBox>
                             </children>
                         </HBox>
 
@@ -487,12 +507,22 @@
                                 <Label prefWidth="75.0" text="6" textFill="#d3e2e7" />
                                 <Label prefWidth="90.0" text="Finished" textFill="#d3e2e7" />
 
-                                <Button onAction="#viewTournamentDetails"
-                                        mnemonicParsing="false"
-                                        prefHeight="25.0" prefWidth="70.0"
-                                        text="View"
-                                        textFill="WHITE"
-                                        style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" />
+                                <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                    <children>
+                                        <Button onAction="#viewTournamentRow3Details"
+                                                mnemonicParsing="false"
+                                                prefHeight="25.0" prefWidth="58.0"
+                                                text="View"
+                                                textFill="WHITE"
+                                                style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" />
+                                        <Button onAction="#joinTournamentRow3"
+                                                mnemonicParsing="false"
+                                                prefHeight="25.0" prefWidth="58.0"
+                                                text="Join"
+                                                textFill="WHITE"
+                                                style="-fx-background-color: #5f86a6; -fx-background-radius: 13;" />
+                                    </children>
+                                </HBox>
                             </children>
                         </HBox>
 

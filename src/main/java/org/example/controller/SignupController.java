@@ -73,7 +73,7 @@ public class SignupController {
             connection.commit();
 
             showAlert(Alert.AlertType.INFORMATION, "Success", "Account created successfully. Please sign in.");
-            Navigation.goTo(event, "signInFrame.fxml");
+            Navigation.goTo(event, "signinFrame.fxml");
 
         } catch (Exception e) {
             e.printStackTrace();

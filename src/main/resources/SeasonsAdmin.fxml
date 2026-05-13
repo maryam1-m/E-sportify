@@ -86,7 +86,7 @@
                     </graphic>
                 </Button>
 
-                <Button prefHeight="30.0" prefWidth="130.0"
+                <Button onAction="#goToSeasons" prefHeight="30.0" prefWidth="130.0"
                         style="-fx-background-color: #0b2b4a; -fx-background-radius: 15; -fx-cursor: hand;"
                         text="    Seasons" textFill="WHITE">
                     <graphic>

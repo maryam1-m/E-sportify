@@ -202,7 +202,7 @@
                                         <Label text="Match Schedule" textFill="WHITE">
                                             <font><Font name="ArtifaktElement-Heavy" size="20.0" /></font>
                                         </Label>
-                                        <Button mnemonicParsing="false" text="Filter"
+                                        <Button mnemonicParsing="false" onAction="#filterMatches" text="Filter"
                                                 style="-fx-background-color: #5f86a6; -fx-background-radius: 14;" textFill="WHITE" />
                                     </children>
                                 </HBox>
@@ -320,7 +320,7 @@
                                         </VBox>
                                     </children>
                                 </HBox>
-                                <Button mnemonicParsing="false" prefWidth="200.0" text="View Details"
+                                <Button mnemonicParsing="false" onAction="#viewFeaturedMatchDetails" prefWidth="200.0" text="View Details"
                                         style="-fx-background-color: #02182e; -fx-background-radius: 18;" textFill="WHITE" />
                             </children>
                         </VBox>

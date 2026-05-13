@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.controller.EditPlayerController">
+    <left>
+        <VBox spacing="20.0" style="-fx-background-color: #02182e;" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets left="20.0" top="24.0" bottom="24.0" />
+            </padding>
+            <children>
+                <Label text=" E-Sportify" textFill="#d3e2e7">
+                    <font>
+                        <Font name="Century Schoolbook Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Button mnemonicParsing="false" onAction="#cancel" prefWidth="118.0"
+                        style="-fx-background-color: #0b345c; -fx-background-radius: 12;" text=" Back" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" preserveRatio="true">
+                            <image>
+                                <Image url="@images/progress.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <VBox spacing="18.0" style="-fx-background-color: #02182e;">
+            <padding>
+                <Insets bottom="28.0" left="32.0" right="32.0" top="28.0" />
+            </padding>
+            <children>
+                <Label text="Edit Player" textFill="#d3e2e7">
+                    <font>
+                        <Font name="Segoe UI Bold" size="26.0" />
+                    </font>
+                </Label>
+                <Label text="Update profile, stats, and join date. Email must stay unique across players." textFill="#8197ac" wrapText="true" />
+
+                <VBox spacing="12.0" style="-fx-background-color: #022c50; -fx-background-radius: 22; -fx-padding: 22;">
+                    <children>
+                        <Label text="Name" textFill="#d3e2e7" />
+                        <TextField fx:id="nameField" style="-fx-background-color: #d3e2e7; -fx-background-radius: 16;" />
+
+                        <Label text="Email" textFill="#d3e2e7" />
+                        <TextField fx:id="emailField" style="-fx-background-color: #d3e2e7; -fx-background-radius: 16;" />
+
+                        <Label text="Join date" textFill="#d3e2e7" />
+                        <DatePicker fx:id="joinDatePicker" style="-fx-background-radius: 16;" />
+
+                        <HBox spacing="16.0">
+                            <children>
+                                <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label text="Rank points" textFill="#d3e2e7" />
+                                        <TextField fx:id="rankPointsField" style="-fx-background-color: #d3e2e7; -fx-background-radius: 16;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label text="Wins" textFill="#d3e2e7" />
+                                        <TextField fx:id="winsField" style="-fx-background-color: #d3e2e7; -fx-background-radius: 16;" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+
+                        <HBox spacing="16.0">
+                            <children>
+                                <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label text="Losses" textFill="#d3e2e7" />
+                                        <TextField fx:id="lossesField" style="-fx-background-color: #d3e2e7; -fx-background-radius: 16;" />
+                                    </children>
+                                </VBox>
+                                <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label text="Total matches" textFill="#d3e2e7" />
+                                        <TextField fx:id="totalMatchesField" style="-fx-background-color: #d3e2e7; -fx-background-radius: 16;" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+
+                        <HBox spacing="12.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#savePlayer" prefWidth="120.0"
+                                        style="-fx-background-color: #2b537e; -fx-background-radius: 15;" text="Save" textFill="WHITE" />
+                                <Button mnemonicParsing="false" onAction="#cancel" prefWidth="120.0"
+                                        style="-fx-background-color: #1d4052; -fx-background-radius: 15;" text="Cancel" textFill="WHITE" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

@@ -2,9 +2,11 @@ package org.example.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.example.database.DatabaseConnection;
+import org.example.session.UserSession;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -50,19 +52,24 @@ public class TeamMemberController extends DashboardController {
     @FXML private Label member4RoleLabel;
     @FXML private Label member4StatusLabel;
 
+    private final List<MemberRow> memberRows = new ArrayList<>();
+    private Integer displayedTeamId;
+
     @FXML
     public void initialize() {
         loadMembers(null);
     }
 
     private void loadMembers(String keyword) {
-        List<MemberRow> members = new ArrayList<>();
+        memberRows.clear();
+        List<MemberRow> members = memberRows;
 
         String sql = """
                 SELECT
                     p.player_id,
                     p.name AS player_name,
-                    COALESCE(t.team_name, 'No Team') AS team_name,
+                    COALESCE(MAX(t.team_name), 'No Team') AS team_name,
+                    MAX(t.team_id) AS team_id,
                     COALESCE(g.title, 'No Game') AS game_title,
                     COALESCE(p.total_matches, 0) AS total_matches,
                     COALESCE(p.wins, 0) AS wins,
@@ -73,8 +80,8 @@ public class TeamMemberController extends DashboardController {
                 LEFT JOIN TournamentParticipation tp ON t.team_id = tp.team_id
                 LEFT JOIN Tournament tr ON tp.tournament_id = tr.tournament_id
                 LEFT JOIN Game g ON tr.game_id = g.game_id
-                WHERE (? IS NULL OR p.name LIKE ? OR t.team_name LIKE ? OR g.title LIKE ?)
-                GROUP BY p.player_id, p.name, t.team_name, g.title, p.total_matches, p.wins, p.losses
+                WHERE (? IS NULL OR p.name LIKE ? OR COALESCE(t.team_name, '') LIKE ? OR g.title LIKE ?)
+                GROUP BY p.player_id, p.name, g.title, p.total_matches, p.wins, p.losses
                 ORDER BY p.rank_points DESC
                 LIMIT 4
                 """;
@@ -101,9 +108,13 @@ public class TeamMemberController extends DashboardController {
                     int wins = resultSet.getInt("wins");
                     int losses = resultSet.getInt("losses");
 
+                    Integer teamId = resultSet.getObject("team_id") == null
+                            ? null
+                            : resultSet.getInt("team_id");
                     members.add(new MemberRow(
                             resultSet.getString("player_name"),
                             resultSet.getString("team_name"),
+                            teamId,
                             resultSet.getString("game_title"),
                             "Player",
                             "Active",
@@ -163,6 +174,7 @@ public class TeamMemberController extends DashboardController {
     }
 
     private void fillSelectedMember(MemberRow member) {
+        displayedTeamId = member.teamId;
         setText(selectedTeamLabel, member.team);
         setText(selectedMemberNameLabel, "Name: " + member.name);
         setText(selectedMemberRoleLabel, "Role: " + member.role);
@@ -174,6 +186,7 @@ public class TeamMemberController extends DashboardController {
     }
 
     private void clearSelectedMember() {
+        displayedTeamId = null;
         setText(selectedTeamLabel, "No Team");
         setText(selectedMemberNameLabel, "Name: -");
         setText(selectedMemberRoleLabel, "Role: -");
@@ -217,8 +230,89 @@ public class TeamMemberController extends DashboardController {
     }
 
     @FXML
-    public void viewMemberDetails(ActionEvent event) {
-        System.out.println("View member details clicked");
+    public void viewMemberSlot1(ActionEvent event) {
+        showMemberDetails(0);
+    }
+
+    @FXML
+    public void viewMemberSlot2(ActionEvent event) {
+        showMemberDetails(1);
+    }
+
+    @FXML
+    public void viewMemberSlot3(ActionEvent event) {
+        showMemberDetails(2);
+    }
+
+    @FXML
+    public void viewMemberSlot4(ActionEvent event) {
+        showMemberDetails(3);
+    }
+
+    private void showMemberDetails(int index) {
+        if (index < 0 || index >= memberRows.size()) {
+            new Alert(Alert.AlertType.INFORMATION, "No member in this slot.").showAndWait();
+            return;
+        }
+        MemberRow m = memberRows.get(index);
+        fillSelectedMember(m);
+        String body = "Name: " + m.name
+                + "\nTeam: " + m.team
+                + "\nGame: " + m.game
+                + "\nRole: " + m.role
+                + "\nStatus: " + m.status
+                + "\nMatches: " + m.matches
+                + "\nWins: " + m.wins
+                + "\nLosses: " + m.losses
+                + "\nRating: " + m.rating;
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Member details");
+        alert.setHeaderText(m.name);
+        alert.setContentText(body);
+        alert.showAndWait();
+    }
+
+    @FXML
+    public void joinTeam(ActionEvent event) {
+        int playerId = UserSession.getPlayerId();
+        if (playerId <= 0) {
+            new Alert(Alert.AlertType.WARNING, "Please sign in with a player account to join a team.").showAndWait();
+            return;
+        }
+        if (displayedTeamId == null || displayedTeamId <= 0) {
+            new Alert(Alert.AlertType.INFORMATION,
+                    "No team is selected. Use View on a row for a member who belongs to the team you want to join.")
+                    .showAndWait();
+            return;
+        }
+        int teamId = displayedTeamId;
+
+        String existsSql = "SELECT 1 FROM TeamMembership WHERE player_id = ? AND team_id = ?";
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement check = connection.prepareStatement(existsSql)) {
+            check.setInt(1, playerId);
+            check.setInt(2, teamId);
+            try (ResultSet rs = check.executeQuery()) {
+                if (rs.next()) {
+                    new Alert(Alert.AlertType.INFORMATION, "You are already in this team.").showAndWait();
+                    return;
+                }
+            }
+
+            String insertSql = """
+                    INSERT INTO TeamMembership (player_id, team_id, join_date)
+                    VALUES (?, ?, CURDATE())
+                    """;
+            try (PreparedStatement insert = connection.prepareStatement(insertSql)) {
+                insert.setInt(1, playerId);
+                insert.setInt(2, teamId);
+                insert.executeUpdate();
+            }
+            new Alert(Alert.AlertType.INFORMATION, "You joined the team successfully.").showAndWait();
+            loadMembers(searchMemberField == null ? null : searchMemberField.getText());
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR, "Could not join team: " + e.getMessage()).showAndWait();
+        }
     }
 
     private void setText(Label label, String value) {
@@ -230,6 +324,7 @@ public class TeamMemberController extends DashboardController {
     private static class MemberRow {
         String name;
         String team;
+        Integer teamId;
         String game;
         String role;
         String status;
@@ -241,6 +336,7 @@ public class TeamMemberController extends DashboardController {
         MemberRow(
                 String name,
                 String team,
+                Integer teamId,
                 String game,
                 String role,
                 String status,
@@ -251,6 +347,7 @@ public class TeamMemberController extends DashboardController {
         ) {
             this.name = name;
             this.team = team;
+            this.teamId = teamId;
             this.game = game;
             this.role = role;
             this.status = status;

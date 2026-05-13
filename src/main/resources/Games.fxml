@@ -96,7 +96,7 @@
                 </Button>
 
                 <!-- Current Page -->
-                <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="101.0"
+                <Button mnemonicParsing="false" onAction="#goToGames" prefHeight="30.0" prefWidth="101.0"
                         style="-fx-background-color: #0b345c; -fx-background-radius: 12;"
                         text="    Games" textFill="WHITE">
                     <graphic>
@@ -304,6 +304,17 @@
                                     </children>
                                 </HBox>
 
+                                <Button onAction="#joinFeaturedGame"
+                                        mnemonicParsing="false"
+                                        prefHeight="30.0" prefWidth="160.0"
+                                        text="Join Game"
+                                        textFill="WHITE"
+                                        style="-fx-background-color: #02182e; -fx-background-radius: 15;">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="13.0" />
+                                    </font>
+                                </Button>
+
                             </children>
                         </VBox>
 
@@ -344,7 +355,7 @@
                                 <Label fx:id="game1PriceLabel" text="Price: -" textFill="WHITE" />
                                 <Label fx:id="game1DeveloperLabel" text="Developer: -" textFill="WHITE" />
 
-                                <Button onAction="#viewGameDetails"
+                                <Button onAction="#viewGame1Details"
                                         mnemonicParsing="false"
                                         prefHeight="30.0" prefWidth="175.0"
                                         text="View Details"
@@ -352,6 +363,16 @@
                                         style="-fx-background-color: #02182e; -fx-background-radius: 15;">
                                     <font>
                                         <Font name="ArtifaktElement-Heavy" size="13.0" />
+                                    </font>
+                                </Button>
+                                <Button onAction="#joinGame1"
+                                        mnemonicParsing="false"
+                                        prefHeight="28.0" prefWidth="175.0"
+                                        text="Join Game"
+                                        textFill="WHITE"
+                                        style="-fx-background-color: #02182e; -fx-background-radius: 15;">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="12.0" />
                                     </font>
                                 </Button>
                             </children>
@@ -387,7 +408,7 @@
                                 <Label fx:id="game2PriceLabel" text="Price: -" textFill="WHITE" />
                                 <Label fx:id="game2DeveloperLabel" text="Developer: -" textFill="WHITE" />
 
-                                <Button onAction="#viewGameDetails"
+                                <Button onAction="#viewGame2Details"
                                         mnemonicParsing="false"
                                         prefHeight="30.0" prefWidth="175.0"
                                         text="View Details"
@@ -395,6 +416,16 @@
                                         style="-fx-background-color: #02182e; -fx-background-radius: 15;">
                                     <font>
                                         <Font name="ArtifaktElement-Heavy" size="13.0" />
+                                    </font>
+                                </Button>
+                                <Button onAction="#joinGame2"
+                                        mnemonicParsing="false"
+                                        prefHeight="28.0" prefWidth="175.0"
+                                        text="Join Game"
+                                        textFill="WHITE"
+                                        style="-fx-background-color: #02182e; -fx-background-radius: 15;">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="12.0" />
                                     </font>
                                 </Button>
                             </children>
@@ -430,7 +461,7 @@
                                 <Label fx:id="game3PriceLabel" text="Price: -" textFill="WHITE" />
                                 <Label fx:id="game3DeveloperLabel" text="Developer: -" textFill="WHITE" />
 
-                                <Button onAction="#viewGameDetails"
+                                <Button onAction="#viewGame3Details"
                                         mnemonicParsing="false"
                                         prefHeight="30.0" prefWidth="175.0"
                                         text="View Details"
@@ -438,6 +469,16 @@
                                         style="-fx-background-color: #02182e; -fx-background-radius: 15;">
                                     <font>
                                         <Font name="ArtifaktElement-Heavy" size="13.0" />
+                                    </font>
+                                </Button>
+                                <Button onAction="#joinGame3"
+                                        mnemonicParsing="false"
+                                        prefHeight="28.0" prefWidth="175.0"
+                                        text="Join Game"
+                                        textFill="WHITE"
+                                        style="-fx-background-color: #02182e; -fx-background-radius: 15;">
+                                    <font>
+                                        <Font name="ArtifaktElement-Heavy" size="12.0" />
                                     </font>
                                 </Button>
                             </children>

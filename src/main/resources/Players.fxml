@@ -111,7 +111,7 @@
                     </Label>
                 </VBox>
 
-                <Button prefHeight="34.0" prefWidth="82.0" text="Open" textFill="WHITE"
+                <Button onAction="#openTopPlayer" prefHeight="34.0" prefWidth="82.0" text="Open" textFill="WHITE"
                         style="-fx-background-color: #8197ac; -fx-background-radius: 17;"/>
             </HBox>
 
@@ -140,7 +140,7 @@
 
                     <Pane VBox.vgrow="ALWAYS"/>
 
-                    <Button prefHeight="36.0" prefWidth="250.0" text="View Player Details" textFill="WHITE"
+                    <Button onAction="#viewFeaturedPlayerDetails" prefHeight="36.0" prefWidth="250.0" text="View Player Details" textFill="WHITE"
                             style="-fx-background-color: #02182e; -fx-background-radius: 18;"/>
                 </VBox>
 
@@ -151,7 +151,7 @@
                             <font><Font name="Segoe UI Bold" size="23.0"/></font>
                         </Label>
                         <Pane HBox.hgrow="ALWAYS"/>
-                        <Button prefHeight="30.0" prefWidth="74.0" text="Filter" textFill="WHITE"
+                        <Button onAction="#filterPlayers" prefHeight="30.0" prefWidth="74.0" text="Filter" textFill="WHITE"
                                 style="-fx-background-color: #2b537e; -fx-background-radius: 15;"/>
                     </HBox>
                     <Line endX="336.0" opacity="0.45" stroke="#d3e2e7"/>
@@ -167,7 +167,7 @@
                             </Label>
                             <Label fx:id="player1InfoLabel" text="Team | points | achievement" textFill="#d3e2e7"/>
                         </VBox>
-                        <Button prefHeight="30.0" prefWidth="68.0" text="Open" textFill="WHITE"
+                        <Button onAction="#openPlayerRow1" prefHeight="30.0" prefWidth="68.0" text="Open" textFill="WHITE"
                                 style="-fx-background-color: #8197ac; -fx-background-radius: 15;"/>
                     </HBox>
 
@@ -182,7 +182,7 @@
                             </Label>
                             <Label fx:id="player2InfoLabel" text="Team | points | achievement" textFill="#d3e2e7"/>
                         </VBox>
-                        <Button prefHeight="30.0" prefWidth="68.0" text="Open" textFill="WHITE"
+                        <Button onAction="#openPlayerRow2" prefHeight="30.0" prefWidth="68.0" text="Open" textFill="WHITE"
                                 style="-fx-background-color: #8197ac; -fx-background-radius: 15;"/>
                     </HBox>
 
@@ -197,7 +197,7 @@
                             </Label>
                             <Label fx:id="player3InfoLabel" text="Team | points | achievement" textFill="#d3e2e7"/>
                         </VBox>
-                        <Button prefHeight="30.0" prefWidth="68.0" text="Open" textFill="WHITE"
+                        <Button onAction="#openPlayerRow3" prefHeight="30.0" prefWidth="68.0" text="Open" textFill="WHITE"
                                 style="-fx-background-color: #8197ac; -fx-background-radius: 15;"/>
                     </HBox>
 
@@ -212,7 +212,7 @@
                             </Label>
                             <Label fx:id="player4InfoLabel" text="Team | points | achievement" textFill="#d3e2e7"/>
                         </VBox>
-                        <Button prefHeight="30.0" prefWidth="68.0" text="Open" textFill="WHITE"
+                        <Button onAction="#openPlayerRow4" prefHeight="30.0" prefWidth="68.0" text="Open" textFill="WHITE"
                                 style="-fx-background-color: #8197ac; -fx-background-radius: 15;"/>
                     </HBox>
                 </VBox>
